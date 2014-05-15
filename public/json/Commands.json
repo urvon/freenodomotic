@@ -1,0 +1,1774 @@
+﻿{"list": [
+  {
+    "name": "Close Kitchen door",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "gate closes",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Kitchen door"
+        },
+        {
+          "@name": "behavior",
+          "@value": "open"
+        },
+        {
+          "@name": "value",
+          "@value": "false"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Inverse luminosity for Light in the entrance",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "dimms the light as the inverse of indoor luminosity",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Light"
+        },
+        {
+          "@name": "behavior",
+          "@value": "brightness"
+        },
+        {
+          "@name": "value",
+          "@value": "100 - @event.luminosity"
+        }
+      ]
+    }
+  },
+  {
+    "name": "turn off all lights",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "turn off all lights",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "behavior",
+          "@value": "powered"
+        },
+        {
+          "@name": "value",
+          "@value": "false"
+        },
+        {
+          "@name": "object.class",
+          "@value": "EnvObject.ElectricDevice.Light"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Decrease Livingroom light brightness",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "decreases Livingroom light brigthness of one step",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Livingroom light"
+        },
+        {
+          "@name": "behavior",
+          "@value": "brightness"
+        },
+        {
+          "@name": "value",
+          "@value": "previous"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Switch Bedroom door open state",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "closes/opens Bedroom door",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Bedroom door"
+        },
+        {
+          "@name": "behavior",
+          "@value": "open"
+        },
+        {
+          "@name": "value",
+          "@value": "opposite"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Open Bedroom door",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "gate opens",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Bedroom door"
+        },
+        {
+          "@name": "behavior",
+          "@value": "open"
+        },
+        {
+          "@name": "value",
+          "@value": "true"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Increase Kitchen Light brightness",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "increases Kitchen Light brigthness of one step",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Kitchen Light"
+        },
+        {
+          "@name": "behavior",
+          "@value": "brightness"
+        },
+        {
+          "@name": "value",
+          "@value": "next"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Set its brightness to the value in the event",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "set its brighness to the value in the event",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "@event.object.name"
+        },
+        {
+          "@name": "behavior",
+          "@value": "brightness"
+        },
+        {
+          "@name": "value",
+          "@value": "@event.value"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Open Kitchen door",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "gate opens",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Kitchen door"
+        },
+        {
+          "@name": "behavior",
+          "@value": "open"
+        },
+        {
+          "@name": "value",
+          "@value": "true"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "switch power of all lights",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "switch power for all lights",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "behavior",
+          "@value": "powered"
+        },
+        {
+          "@name": "value",
+          "@value": "opposite"
+        },
+        {
+          "@name": "object.class",
+          "@value": "EnvObject.ElectricDevice.Light"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Set Kitchen Light brightness to 50%",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "the light Kitchen Light changes its brightness",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Kitchen Light"
+        },
+        {
+          "@name": "behavior",
+          "@value": "brightness"
+        },
+        {
+          "@name": "value",
+          "@value": "50"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Increase Kitchen Light-145 brightness",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "increases Kitchen Light-145 brigthness of one step",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Kitchen Light-145"
+        },
+        {
+          "@name": "behavior",
+          "@value": "brightness"
+        },
+        {
+          "@name": "value",
+          "@value": "next"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Turn off Kitchen Light",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "Kitchen Light turns off",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Kitchen Light"
+        },
+        {
+          "@name": "behavior",
+          "@value": "powered"
+        },
+        {
+          "@name": "value",
+          "@value": "false"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "turn off devices tagged useless",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "uuid": "40a233bc-922a-469c-9107-8a1946c3f3a3",
+    "delay": 0,
+    "timeout": 0,
+    "description": "turn off all devices with tag 'useless'",
+    "tags": [
+      "turn",
+      "off",
+      "useless",
+      "tagged",
+      "devices"
+    ],
+    "hardwareLevel": false,
+    "editable": true,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object.includetags",
+          "@value": "useless"
+        },
+        {
+          "@name": "behavior",
+          "@value": "powered"
+        },
+        {
+          "@name": "value",
+          "@value": "false"
+        }
+      ],
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Turn on Lights General Switch",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "Lights General Switch turns on",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Lights General Switch"
+        },
+        {
+          "@name": "behavior",
+          "@value": "powered"
+        },
+        {
+          "@name": "value",
+          "@value": "true"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Close this gate",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "this gate is closed",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "@event.object.name"
+        },
+        {
+          "@name": "behavior",
+          "@value": "open"
+        },
+        {
+          "@name": "value",
+          "@value": "false"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Say electric device status",
+    "receiver": "app.actuators.media.google-speech.in",
+    "delay": 0,
+    "timeout": 0,
+    "description": "say the electric device status",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "say",
+          "@value": "= if (@current.object.behavior.powered) say=\"@current.object.name is on with brightness at @current.object.behavior.brightness#%.\"; else say=\"@current.object.name is off.\";"
+        }
+      ],
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Set its openness to the value in the event",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "set its openness to the value in the event",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "@event.object.name"
+        },
+        {
+          "@name": "behavior",
+          "@value": "openness"
+        },
+        {
+          "@name": "value",
+          "@value": "@event.value"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Decrease Kitchen Light brightness",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "decreases Kitchen Light brigthness of one step",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Kitchen Light"
+        },
+        {
+          "@name": "behavior",
+          "@value": "brightness"
+        },
+        {
+          "@name": "value",
+          "@value": "previous"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "switch power for all lights",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "uuid": "7caa9992-52f1-4e73-a079-c50661a54909",
+    "delay": 0,
+    "timeout": 0,
+    "description": "switch power for all lights",
+    "tags": [
+      "lights",
+      "asdasd",
+      "for",
+      "power",
+      "switch",
+      "all"
+    ],
+    "hardwareLevel": false,
+    "editable": true,
+    "executed": true,
+    "properties": {
+      "properties": [
+        {
+          "@name": "behavior",
+          "@value": "powered"
+        },
+        {
+          "@name": "value",
+          "@value": "opposite"
+        },
+        {
+          "@name": "object.class",
+          "@value": "EnvObject.ElectricDevice.Light"
+        }
+      ],
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Increase Livingroom light brightness",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "increases Livingroom light brigthness of one step",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Livingroom light"
+        },
+        {
+          "@name": "behavior",
+          "@value": "brightness"
+        },
+        {
+          "@name": "value",
+          "@value": "next"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Increase Bedroom door openness",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "increases Bedroom door openness of one step",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Bedroom door"
+        },
+        {
+          "@name": "behavior",
+          "@value": "openness"
+        },
+        {
+          "@name": "value",
+          "@value": "next"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Set Kitchen Light-145 brightness to 50%",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "the light Kitchen Light-145 changes its brightness",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Kitchen Light-145"
+        },
+        {
+          "@name": "behavior",
+          "@value": "brightness"
+        },
+        {
+          "@name": "value",
+          "@value": "50"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Increase its brightness",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "increases its brigthness of one step",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "@event.object.name"
+        },
+        {
+          "@name": "behavior",
+          "@value": "brightness"
+        },
+        {
+          "@name": "value",
+          "@value": "next"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Set Kitchen door openness to 50%",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "the Kitchen door changes its openness",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Kitchen door"
+        },
+        {
+          "@name": "behavior",
+          "@value": "openness"
+        },
+        {
+          "@name": "value",
+          "@value": "50"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Turn off Kitchen Light-145",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "Kitchen Light-145 turns off",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Kitchen Light-145"
+        },
+        {
+          "@name": "behavior",
+          "@value": "powered"
+        },
+        {
+          "@name": "value",
+          "@value": "false"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Turn on Livingroom light",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "Livingroom light turns on",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Livingroom light"
+        },
+        {
+          "@name": "behavior",
+          "@value": "powered"
+        },
+        {
+          "@name": "value",
+          "@value": "true"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Turn on Kitchen Light-145",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "Kitchen Light-145 turns on",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Kitchen Light-145"
+        },
+        {
+          "@name": "behavior",
+          "@value": "powered"
+        },
+        {
+          "@name": "value",
+          "@value": "true"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Turn it on",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "Object turns on",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "@event.object.name"
+        },
+        {
+          "@name": "behavior",
+          "@value": "powered"
+        },
+        {
+          "@name": "value",
+          "@value": "true"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Increase Kitchen door openness",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "increases Kitchen door openness of one step",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Kitchen door"
+        },
+        {
+          "@name": "behavior",
+          "@value": "openness"
+        },
+        {
+          "@name": "value",
+          "@value": "next"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Restart Jfrontend Plugin",
+    "receiver": "app.actuators.plugins.controller.in",
+    "delay": 0,
+    "timeout": 0,
+    "description": "Restarts Java Desktop plugin",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "plugin",
+          "@value": "Desktop Frontend"
+        },
+        {
+          "@name": "action",
+          "@value": "restart"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Increase its openness",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "increases its openness of one step",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "@event.object.name"
+        },
+        {
+          "@name": "behavior",
+          "@value": "openness"
+        },
+        {
+          "@name": "value",
+          "@value": "next"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Wait five seconds",
+    "receiver": "app.actuators.automation.delayer.in",
+    "delay": 0,
+    "timeout": 7000,
+    "description": "delays next command of five seconds",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "delay",
+          "@value": "5000"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Turn off Lights General Switch",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "Lights General Switch turns off",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Lights General Switch"
+        },
+        {
+          "@name": "behavior",
+          "@value": "powered"
+        },
+        {
+          "@name": "value",
+          "@value": "false"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Ask something with dialog",
+    "receiver": "command.jfrontend.user.callout",
+    "delay": 0,
+    "timeout": 10000,
+    "description": "a yes/no dialog box is promped on the screen and wait for an user input",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "question",
+          "@value": "insert here a question?"
+        },
+        {
+          "@name": "options",
+          "@value": "reply1, reply2, reply3, reply4"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Set its brightness to 50%",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "Set its brightness to 50%",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "@event.object.name"
+        },
+        {
+          "@name": "behavior",
+          "@value": "brightness"
+        },
+        {
+          "@name": "value",
+          "@value": "50"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Decrease its openness",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "decreases its openness of one step",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "@event.object.name"
+        },
+        {
+          "@name": "behavior",
+          "@value": "openness"
+        },
+        {
+          "@name": "value",
+          "@value": "previous"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Say readed motion level",
+    "receiver": "app.actuators.media.google-speech.in",
+    "delay": 0,
+    "timeout": 0,
+    "description": "say motion level readed in the video stream",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "say",
+          "@value": "motion level is @event.motion-level"
+        }
+      ],
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Decrease Kitchen Light-145 brightness",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "decreases Kitchen Light-145 brigthness of one step",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Kitchen Light-145"
+        },
+        {
+          "@name": "behavior",
+          "@value": "brightness"
+        },
+        {
+          "@name": "value",
+          "@value": "previous"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Switch Livingroom light power",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "switches the power of Livingroom light",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Livingroom light"
+        },
+        {
+          "@name": "behavior",
+          "@value": "powered"
+        },
+        {
+          "@name": "value",
+          "@value": "opposite"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Turn it off",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "Object turns off",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "@event.object.name"
+        },
+        {
+          "@name": "behavior",
+          "@value": "powered"
+        },
+        {
+          "@name": "value",
+          "@value": "false"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Set Livingroom light brightness to 50%",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "the light Livingroom light changes its brightness",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Livingroom light"
+        },
+        {
+          "@name": "behavior",
+          "@value": "brightness"
+        },
+        {
+          "@name": "value",
+          "@value": "50"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Turn off Livingroom light",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "Livingroom light turns off",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Livingroom light"
+        },
+        {
+          "@name": "behavior",
+          "@value": "powered"
+        },
+        {
+          "@name": "value",
+          "@value": "false"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Set Bedroom door openness to 50%",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "the Bedroom door changes its openness",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Bedroom door"
+        },
+        {
+          "@name": "behavior",
+          "@value": "openness"
+        },
+        {
+          "@name": "value",
+          "@value": "50"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "turn on all lights",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "turn on all lights",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "behavior",
+          "@value": "powered"
+        },
+        {
+          "@name": "value",
+          "@value": "true"
+        },
+        {
+          "@name": "object.class",
+          "@value": "EnvObject.ElectricDevice.Light"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Switch its power",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "Object switches its power",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "@event.object.name"
+        },
+        {
+          "@name": "behavior",
+          "@value": "powered"
+        },
+        {
+          "@name": "value",
+          "@value": "opposite"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Set its openness to 50%",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "set its openness to 50%",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "@event.object.name"
+        },
+        {
+          "@name": "behavior",
+          "@value": "openness"
+        },
+        {
+          "@name": "value",
+          "@value": "50"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Close Bedroom door",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "gate closes",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Bedroom door"
+        },
+        {
+          "@name": "behavior",
+          "@value": "open"
+        },
+        {
+          "@name": "value",
+          "@value": "false"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Decrease its brightness",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "decreases its brigthness of one step",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "@event.object.name"
+        },
+        {
+          "@name": "behavior",
+          "@value": "brightness"
+        },
+        {
+          "@name": "value",
+          "@value": "previous"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Open this gate",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "this gate is opened",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "@event.object.name"
+        },
+        {
+          "@name": "behavior",
+          "@value": "open"
+        },
+        {
+          "@name": "value",
+          "@value": "true"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Switch Kitchen Light-145 power",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "switches the power of Kitchen Light-145",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Kitchen Light-145"
+        },
+        {
+          "@name": "behavior",
+          "@value": "powered"
+        },
+        {
+          "@name": "value",
+          "@value": "opposite"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Decrease Kitchen door openness",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "decreases Kitchen door openness of one step",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Kitchen door"
+        },
+        {
+          "@name": "behavior",
+          "@value": "openness"
+        },
+        {
+          "@name": "value",
+          "@value": "previous"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Switch Kitchen Light power",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "switches the power of Kitchen Light",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Kitchen Light"
+        },
+        {
+          "@name": "behavior",
+          "@value": "powered"
+        },
+        {
+          "@name": "value",
+          "@value": "opposite"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Show sensors simulator plugin GUI",
+    "receiver": "app.actuators.plugins.controller.in",
+    "delay": 0,
+    "timeout": 0,
+    "description": "make a the sensor simulator plugin show its GUI",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "plugin",
+          "@value": "Sensors Simulator"
+        },
+        {
+          "@name": "action",
+          "@value": "show"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Say current time",
+    "receiver": "app.actuators.media.google-speech.in",
+    "delay": 0,
+    "timeout": 0,
+    "description": "say current time",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "say",
+          "@value": "It's @event.time.hour and @event.time.minute minutes"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Switch Lights General Switch power",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "switches the power of Lights General Switch",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Lights General Switch"
+        },
+        {
+          "@name": "behavior",
+          "@value": "powered"
+        },
+        {
+          "@name": "value",
+          "@value": "opposite"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Decrease Bedroom door openness",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "decreases Bedroom door openness of one step",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Bedroom door"
+        },
+        {
+          "@name": "behavior",
+          "@value": "openness"
+        },
+        {
+          "@name": "value",
+          "@value": "previous"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Switch Kitchen door open state",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "closes/opens Kitchen door",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Kitchen door"
+        },
+        {
+          "@name": "behavior",
+          "@value": "open"
+        },
+        {
+          "@name": "value",
+          "@value": "opposite"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Say door/window status",
+    "receiver": "app.actuators.media.google-speech.in",
+    "delay": 0,
+    "timeout": 0,
+    "description": "say the status of a door or window object",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "say",
+          "@value": "= if (@current.object.behavior.open) say=\"@current.object.name is open\"; else say=\"@current.object.name is closed.\";"
+        }
+      ],
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Switch its open state",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "opens/closes the gate in the event",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "@event.object.name"
+        },
+        {
+          "@name": "behavior",
+          "@value": "open"
+        },
+        {
+          "@name": "value",
+          "@value": "opposite"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  },
+  {
+    "name": "Say current temperature of the thermometer",
+    "receiver": "app.actuators.media.google-speech.in",
+    "delay": 0,
+    "timeout": 0,
+    "description": "say current temperature of the thermometer object",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "say",
+          "@value": "@event.object.name temperature is @current.object.behavior.temperature Celsius degrees."
+        }
+      ]
+    }
+  },
+  {
+    "name": "Turn on Kitchen Light",
+    "receiver": "app.events.sensors.behavior.request.objects",
+    "delay": 0,
+    "timeout": 0,
+    "description": "Kitchen Light turns on",
+    "hardwareLevel": false,
+    "editable": false,
+    "executed": false,
+    "properties": {
+      "properties": [
+        {
+          "@name": "object",
+          "@value": "Kitchen Light"
+        },
+        {
+          "@name": "behavior",
+          "@value": "powered"
+        },
+        {
+          "@name": "value",
+          "@value": "true"
+        }
+      ],
+      "xmlFile": "",
+      "tuples": {
+        "tuples": []
+      }
+    }
+  }
+]}

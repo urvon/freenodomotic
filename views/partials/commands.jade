@@ -1,0 +1,39 @@
+﻿div(class="col-xs-12 col-sm-12 container", ng-controller="CommandController")
+    .panel.panel-default(context-menu='onRightClick(message);', data-target='myMenu', ng-class='{ \'highlight\': highlight, \'expanded\' : expanded }')
+        table.table.table-striped.table-hover
+            thead
+                tr
+                    th Nom
+                    th Description
+            tbody(ng-repeat="data in datas")
+                tr(ng-click="edit(data.name)")                
+                    td {{data.name.substring(0, 20)}}
+                    td {{data.description.substring(0, 20)}} 
+
+    #myMenu.dropdown.position-fixed
+      ul.dropdown-menu(role='menu', aria-labelledby='dropdownMenu1')
+        li(role='presentation')
+          a.pointer(role='menuitem', tabindex='-1', ng-click='highlight = true') Select
+        li(role='presentation')
+          a.pointer(role='menuitem', tabindex='-1', ng-click='highlight = false') Deselect
+        li(role='presentation')
+          a.pointer(role='menuitem', tabindex='-1', ng-click='expanded = true') Expand
+        li(role='presentation')
+          a.pointer(role='menuitem', tabindex='-1', ng-click='expanded = false') Contract
+        li(role='presentation')
+          a(href='https://github.com/ianwalter/ng-context-menu', role='menuitem', tabindex='-1') ng-context-menu on GitHub
+
+        .dropdown
+            button#dropdownMenu1.btn.dropdown-toggle.sr-only(type='button', data-toggle='dropdown')
+                | Dropdown
+                span.caret
+            ul.dropdown-menu(role='menu', aria-labelledby='dropdownMenu1')
+                li(role='presentation')
+                  a(role='menuitem', tabindex='-1', href='#') Action
+                li(role='presentation')
+                  a(role='menuitem', tabindex='-1', href='#') Another action
+                li(role='presentation')
+                  a(role='menuitem', tabindex='-1', href='#') Something else here
+                li.divider(role='presentation')
+                li(role='presentation')
+                  a(role='menuitem', tabindex='-1', href='#') Separated link

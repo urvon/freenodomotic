@@ -1,0 +1,40 @@
+﻿div(class="col-xs-12 col-sm-9")
+    h1 Login
+    form(ng-submit='login()')
+      p
+        label.control-label Username
+        input(type='text', placeholder='Username', ng-model='user.username')
+      p
+        label.control-label Password
+        input(type='password', placeholder='Password', ng-model='user.password')
+        br
+      p
+        button.btn.btn-primary(type='submit') Login
+    
+      div(ng-controller="LoginCtrl2") toto
+
+    //Button trigger modal 
+    button.btn.btn-primary.btn-lg(data-toggle='modal', data-target='#myModal')
+      | Launch demo modal
+    //
+       Modal 
+    #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+            h4#myModalLabel.modal-title Connexion...
+          .modal-body
+            form(ng-submit='login()')
+              p
+                label.control-label Utilisateur
+                input(type='text', placeholder='Username', ng-model='user.username')
+              p
+                label.control-label Mot de passe
+                input(type='password', placeholder='Password', ng-model='user.password')
+                br
+          .modal-footer
+            button.btn.btn-default(type='button', data-dismiss='modal') Annuler
+            button.btn.btn-primary(type='button') Se connecter
+
+    

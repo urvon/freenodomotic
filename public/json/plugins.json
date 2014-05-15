@@ -1,0 +1,58 @@
+﻿{"list": [
+  {
+    "name": "Automations Editor",
+    "isRunning": false
+  },
+  {
+    "name": "Delayer",
+    "isRunning": true
+  },
+  {
+    "name": "Desktop Frontend",
+    "isRunning": true
+  },
+  {
+    "name": "HelloWorld",
+    "isRunning": false
+  },
+  {
+    "name": "Log Viewer",
+    "isRunning": false
+  },
+  {
+    "name": "Performances Report",
+    "isRunning": false
+  },
+  {
+    "name": "Plugins Remote Controller",
+    "isRunning": false
+  },
+  {
+    "name": "RestApi",
+    "isRunning": true
+  },
+  {
+    "name": "Scheduler",
+    "isRunning": true
+  },
+  {
+    "name": "Sensors Simulator",
+    "isRunning": true
+  },
+  {
+    "name": "Successful Test",
+    "isRunning": false
+  },
+  {
+    "name": "Tracking Simulator (Random)",
+    "isRunning": false
+  },
+  {
+    "name": "Tracking Simulator (Read Socket)",
+    "isRunning": false
+  },
+  {
+    "name": "Tracking Simulator (Read file)",
+    "isRunning": false
+  }
+]}

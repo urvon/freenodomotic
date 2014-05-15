@@ -1,0 +1,2193 @@
+﻿{"list": [
+  {
+    "name": "Ground Floor",
+    "width": 1500,
+    "height": 1324,
+    "renderer": "photo",
+    "backgroundColor": {
+      "red": 255,
+      "green": 255,
+      "blue": 255,
+      "alpha": 255
+    },
+    "backgroundImage": "map2.png",
+    "zones": [
+      {
+        "name": "Indoor",
+        "description": "",
+        "room": false,
+        "shape": {
+          "points": [
+            {
+              "x": 20,
+              "y": 240
+            },
+            {
+              "x": 1460,
+              "y": 240
+            },
+            {
+              "x": 1460,
+              "y": 730
+            },
+            {
+              "x": 1195,
+              "y": 730
+            },
+            {
+              "x": 1195,
+              "y": 1165
+            },
+            {
+              "x": 300,
+              "y": 1165
+            },
+            {
+              "x": 300,
+              "y": 905
+            },
+            {
+              "x": 20,
+              "y": 905
+            }
+          ]
+        },
+        "objects": [
+          {
+            "name": "Bedroom door",
+            "description": "Connects Bedroom to Livingroom",
+            "actAs": "virtual",
+            "type": "EnvObject.Gate",
+            "uuid": "06e94ceb-7218-4fff-9305-668d94d0fa59",
+            "hierarchy": "it.freedomotic.objects.impl.Gate",
+            "protocol": "unknown",
+            "phisicalAddress": "unknown",
+            "behaviors": [
+              {
+                "name": "open",
+                "description": "asd",
+                "active": true,
+                "priority": -1,
+                "readOnly": false,
+                "value": false
+              },
+              {
+                "name": "openness",
+                "description": "asd",
+                "active": true,
+                "priority": -1,
+                "readOnly": false,
+                "value": 0,
+                "max": 100,
+                "min": 0,
+                "scale": 1,
+                "step": 1
+              }
+            ],
+            "representation": [
+              {
+                "tangible": true,
+                "intersecable": false,
+                "offset": {
+                  "x": 320,
+                  "y": 679
+                },
+                "rotation": 0.0,
+                "fillColor": "#eee9e9",
+                "textColor": "#000000",
+                "borderColor": "#606060",
+                "scaleX": 0.0,
+                "scaleY": 0.0,
+                "shape": {
+                  "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+                  "points": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 8
+                    },
+                    {
+                      "x": 0,
+                      "y": 8
+                    }
+                  ]
+                }
+              },
+              {
+                "tangible": true,
+                "intersecable": false,
+                "offset": {
+                  "x": 320,
+                  "y": 679
+                },
+                "rotation": 25.0,
+                "fillColor": "#eee9e9",
+                "textColor": "#000000",
+                "borderColor": "#606060",
+                "scaleX": 0.0,
+                "scaleY": 0.0,
+                "shape": {
+                  "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+                  "points": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 8
+                    },
+                    {
+                      "x": 0,
+                      "y": 8
+                    }
+                  ]
+                }
+              },
+              {
+                "tangible": true,
+                "intersecable": false,
+                "offset": {
+                  "x": 320,
+                  "y": 679
+                },
+                "rotation": 0.0,
+                "fillColor": "#eee9e9",
+                "textColor": "#000000",
+                "borderColor": "#606060",
+                "scaleX": 0.0,
+                "scaleY": 0.0,
+                "shape": {
+                  "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+                  "points": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 8
+                    },
+                    {
+                      "x": 0,
+                      "y": 8
+                    }
+                  ]
+                }
+              }
+            ],
+            "tags": [],
+            "actions": {
+              "propertyList": [
+                [
+                  "open",
+                  "Execute it successfully"
+                ],
+                [
+                  "measured open",
+                  "Execute it successfully"
+                ],
+                [
+                  "close",
+                  "Execute it successfully"
+                ]
+              ]
+            },
+            "triggers": {
+              "propertyList": [
+                [
+                  "",
+                  "openness"
+                ]
+              ]
+            },
+            "currentRepresentation": 0,
+            "envUUID": "df28cda0-a866-11e2-9e96-0800200c9a66"
+          },
+          {
+            "name": "Kitchen Light",
+            "description": "A light",
+            "actAs": "virtual",
+            "type": "EnvObject.ElectricDevice.Light",
+            "uuid": "21969e70-7e00-4a0d-a13f-a4728240d9d0",
+            "hierarchy": "it.freedomotic.objects.impl.Light",
+            "protocol": "unknown",
+            "phisicalAddress": "unknown",
+            "behaviors": [
+              {
+                "name": "powered",
+                "description": "",
+                "active": true,
+                "priority": -1,
+                "readOnly": false,
+                "value": false
+              },
+              {
+                "name": "brightness",
+                "description": "",
+                "active": true,
+                "priority": -1,
+                "readOnly": false,
+                "value": 0,
+                "max": 100,
+                "min": 0,
+                "scale": 1,
+                "step": 10
+              }
+            ],
+            "representation": [
+              {
+                "tangible": true,
+                "intersecable": false,
+                "offset": {
+                  "x": 726,
+                  "y": 482
+                },
+                "rotation": 0.0,
+                "icon": "light-off.png",
+                "fillColor": "#000000",
+                "textColor": "#000000",
+                "borderColor": "#000000",
+                "scaleX": 0.0,
+                "scaleY": 0.0,
+                "shape": {
+                  "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+                  "points": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 64,
+                      "y": 0
+                    },
+                    {
+                      "x": 64,
+                      "y": 64
+                    },
+                    {
+                      "x": 0,
+                      "y": 64
+                    }
+                  ]
+                }
+              },
+              {
+                "tangible": true,
+                "intersecable": false,
+                "offset": {
+                  "x": 726,
+                  "y": 482
+                },
+                "rotation": 0.0,
+                "icon": "light-on.png",
+                "fillColor": "#000000",
+                "textColor": "#000000",
+                "borderColor": "#000000",
+                "scaleX": 0.0,
+                "scaleY": 0.0,
+                "shape": {
+                  "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+                  "points": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 64,
+                      "y": 0
+                    },
+                    {
+                      "x": 64,
+                      "y": 64
+                    },
+                    {
+                      "x": 0,
+                      "y": 64
+                    }
+                  ]
+                }
+              }
+            ],
+            "tags": [],
+            "actions": {
+              "propertyList": [
+                [
+                  "turn off",
+                  "Execute it successfully"
+                ],
+                [
+                  "set brightness",
+                  "Execute it successfully"
+                ],
+                [
+                  "turn on",
+                  "Execute it successfully"
+                ]
+              ]
+            },
+            "triggers": {
+              "propertyList": [
+                [
+                  "",
+                  "brightness"
+                ]
+              ]
+            },
+            "currentRepresentation": 0,
+            "envUUID": "df28cda0-a866-11e2-9e96-0800200c9a66"
+          },
+          {
+            "name": "Kitchen Light-145",
+            "description": "A light",
+            "actAs": "virtual",
+            "type": "EnvObject.ElectricDevice.Light",
+            "uuid": "24b01c5b-ea44-4a6e-8d89-f3f468765840",
+            "hierarchy": "it.freedomotic.objects.impl.Light",
+            "protocol": "unknown",
+            "phisicalAddress": "unknown",
+            "behaviors": [
+              {
+                "name": "powered",
+                "description": "",
+                "active": true,
+                "priority": -1,
+                "readOnly": false,
+                "value": false
+              },
+              {
+                "name": "brightness",
+                "description": "",
+                "active": true,
+                "priority": -1,
+                "readOnly": false,
+                "value": 0,
+                "max": 100,
+                "min": 0,
+                "scale": 1,
+                "step": 10
+              }
+            ],
+            "representation": [
+              {
+                "tangible": true,
+                "intersecable": false,
+                "offset": {
+                  "x": 766,
+                  "y": 1001
+                },
+                "rotation": 0.0,
+                "icon": "light-off.png",
+                "fillColor": "#000000",
+                "textColor": "#000000",
+                "borderColor": "#000000",
+                "scaleX": 0.0,
+                "scaleY": 0.0,
+                "shape": {
+                  "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+                  "points": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 64,
+                      "y": 0
+                    },
+                    {
+                      "x": 64,
+                      "y": 64
+                    },
+                    {
+                      "x": 0,
+                      "y": 64
+                    }
+                  ]
+                }
+              },
+              {
+                "tangible": true,
+                "intersecable": false,
+                "offset": {
+                  "x": 766,
+                  "y": 1001
+                },
+                "rotation": 0.0,
+                "icon": "light-on.png",
+                "fillColor": "#000000",
+                "textColor": "#000000",
+                "borderColor": "#000000",
+                "scaleX": 0.0,
+                "scaleY": 0.0,
+                "shape": {
+                  "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+                  "points": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 64,
+                      "y": 0
+                    },
+                    {
+                      "x": 64,
+                      "y": 64
+                    },
+                    {
+                      "x": 0,
+                      "y": 64
+                    }
+                  ]
+                }
+              }
+            ],
+            "tags": [],
+            "actions": {
+              "propertyList": [
+                [
+                  "turn off",
+                  "Execute it successfully"
+                ],
+                [
+                  "set brightness",
+                  "Execute it successfully"
+                ],
+                [
+                  "turn on",
+                  "Execute it successfully"
+                ]
+              ]
+            },
+            "triggers": {
+              "propertyList": [
+                [
+                  "",
+                  "brightness"
+                ]
+              ]
+            },
+            "currentRepresentation": 0,
+            "envUUID": "df28cda0-a866-11e2-9e96-0800200c9a66"
+          },
+          {
+            "name": "Kitchen door",
+            "description": "Connects Livingroom to Kitchen",
+            "actAs": "virtual",
+            "type": "EnvObject.Gate",
+            "uuid": "641d9d3f-c8ad-4a9b-824e-8f7285fbe12a",
+            "hierarchy": "it.freedomotic.objects.impl.Gate",
+            "protocol": "unknown",
+            "phisicalAddress": "unknown",
+            "behaviors": [
+              {
+                "name": "open",
+                "description": "asd",
+                "active": true,
+                "priority": -1,
+                "readOnly": false,
+                "value": false
+              },
+              {
+                "name": "openness",
+                "description": "asd",
+                "active": true,
+                "priority": -1,
+                "readOnly": false,
+                "value": 0,
+                "max": 100,
+                "min": 0,
+                "scale": 1,
+                "step": 1
+              }
+            ],
+            "representation": [
+              {
+                "tangible": true,
+                "intersecable": false,
+                "offset": {
+                  "x": 785,
+                  "y": 727
+                },
+                "rotation": 0.0,
+                "fillColor": "#eee9e9",
+                "textColor": "#000000",
+                "borderColor": "#606060",
+                "scaleX": 0.0,
+                "scaleY": 0.0,
+                "shape": {
+                  "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+                  "points": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 8
+                    },
+                    {
+                      "x": 0,
+                      "y": 8
+                    }
+                  ]
+                }
+              },
+              {
+                "tangible": true,
+                "intersecable": false,
+                "offset": {
+                  "x": 785,
+                  "y": 727
+                },
+                "rotation": 25.0,
+                "fillColor": "#eee9e9",
+                "textColor": "#000000",
+                "borderColor": "#606060",
+                "scaleX": 0.0,
+                "scaleY": 0.0,
+                "shape": {
+                  "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+                  "points": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 8
+                    },
+                    {
+                      "x": 0,
+                      "y": 8
+                    }
+                  ]
+                }
+              },
+              {
+                "tangible": true,
+                "intersecable": false,
+                "offset": {
+                  "x": 785,
+                  "y": 727
+                },
+                "rotation": 0.0,
+                "fillColor": "#eee9e9",
+                "textColor": "#000000",
+                "borderColor": "#606060",
+                "scaleX": 0.0,
+                "scaleY": 0.0,
+                "shape": {
+                  "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+                  "points": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 8
+                    },
+                    {
+                      "x": 0,
+                      "y": 8
+                    }
+                  ]
+                }
+              }
+            ],
+            "tags": [],
+            "actions": {
+              "propertyList": [
+                [
+                  "open",
+                  "Execute it successfully"
+                ],
+                [
+                  "measured open",
+                  "Execute it successfully"
+                ],
+                [
+                  "close",
+                  "Execute it successfully"
+                ]
+              ]
+            },
+            "triggers": {
+              "propertyList": [
+                [
+                  "",
+                  "openness"
+                ]
+              ]
+            },
+            "currentRepresentation": 0,
+            "envUUID": "df28cda0-a866-11e2-9e96-0800200c9a66"
+          },
+          {
+            "name": "Livingroom light",
+            "description": "A light",
+            "actAs": "virtual",
+            "type": "EnvObject.ElectricDevice.Light",
+            "uuid": "76fd619c-617b-4fb7-9870-8f08164c4926",
+            "hierarchy": "it.freedomotic.objects.impl.Light",
+            "protocol": "unknown",
+            "phisicalAddress": "unknown",
+            "behaviors": [
+              {
+                "name": "powered",
+                "description": "",
+                "active": true,
+                "priority": -1,
+                "readOnly": false,
+                "value": false
+              },
+              {
+                "name": "brightness",
+                "description": "",
+                "active": true,
+                "priority": -1,
+                "readOnly": false,
+                "value": 0,
+                "max": 100,
+                "min": 0,
+                "scale": 1,
+                "step": 10
+              }
+            ],
+            "representation": [
+              {
+                "tangible": true,
+                "intersecable": false,
+                "offset": {
+                  "x": 729,
+                  "y": 769
+                },
+                "rotation": 0.0,
+                "icon": "light-off.png",
+                "fillColor": "#000000",
+                "textColor": "#000000",
+                "borderColor": "#000000",
+                "scaleX": 0.0,
+                "scaleY": 0.0,
+                "shape": {
+                  "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+                  "points": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 64,
+                      "y": 0
+                    },
+                    {
+                      "x": 64,
+                      "y": 64
+                    },
+                    {
+                      "x": 0,
+                      "y": 64
+                    }
+                  ]
+                }
+              },
+              {
+                "tangible": true,
+                "intersecable": false,
+                "offset": {
+                  "x": 729,
+                  "y": 769
+                },
+                "rotation": 0.0,
+                "icon": "light-on.png",
+                "fillColor": "#000000",
+                "textColor": "#000000",
+                "borderColor": "#000000",
+                "scaleX": 0.0,
+                "scaleY": 0.0,
+                "shape": {
+                  "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+                  "points": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 64,
+                      "y": 0
+                    },
+                    {
+                      "x": 64,
+                      "y": 64
+                    },
+                    {
+                      "x": 0,
+                      "y": 64
+                    }
+                  ]
+                }
+              }
+            ],
+            "tags": [],
+            "actions": {
+              "propertyList": [
+                [
+                  "turn off",
+                  "Execute it successfully"
+                ],
+                [
+                  "set brightness",
+                  "Execute it successfully"
+                ],
+                [
+                  "turn on",
+                  "Execute it successfully"
+                ]
+              ]
+            },
+            "triggers": {
+              "propertyList": [
+                [
+                  "",
+                  "brightness"
+                ]
+              ]
+            },
+            "currentRepresentation": 0,
+            "envUUID": "df28cda0-a866-11e2-9e96-0800200c9a66"
+          }
+        ]
+      },
+      {
+        "name": "Bedroom",
+        "description": "",
+        "room": true,
+        "shape": {
+          "points": [
+            {
+              "x": 20,
+              "y": 240
+            },
+            {
+              "x": 390,
+              "y": 240
+            },
+            {
+              "x": 390,
+              "y": 680
+            },
+            {
+              "x": 305,
+              "y": 680
+            },
+            {
+              "x": 305,
+              "y": 620
+            },
+            {
+              "x": 20,
+              "y": 620
+            }
+          ]
+        },
+        "objects": [
+          {
+            "name": "Bedroom door",
+            "description": "Connects Bedroom to Livingroom",
+            "actAs": "virtual",
+            "type": "EnvObject.Gate",
+            "uuid": "06e94ceb-7218-4fff-9305-668d94d0fa59",
+            "hierarchy": "it.freedomotic.objects.impl.Gate",
+            "protocol": "unknown",
+            "phisicalAddress": "unknown",
+            "behaviors": [
+              {
+                "name": "open",
+                "description": "asd",
+                "active": true,
+                "priority": -1,
+                "readOnly": false,
+                "value": false
+              },
+              {
+                "name": "openness",
+                "description": "asd",
+                "active": true,
+                "priority": -1,
+                "readOnly": false,
+                "value": 0,
+                "max": 100,
+                "min": 0,
+                "scale": 1,
+                "step": 1
+              }
+            ],
+            "representation": [
+              {
+                "tangible": true,
+                "intersecable": false,
+                "offset": {
+                  "x": 320,
+                  "y": 679
+                },
+                "rotation": 0.0,
+                "fillColor": "#eee9e9",
+                "textColor": "#000000",
+                "borderColor": "#606060",
+                "scaleX": 0.0,
+                "scaleY": 0.0,
+                "shape": {
+                  "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+                  "points": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 8
+                    },
+                    {
+                      "x": 0,
+                      "y": 8
+                    }
+                  ]
+                }
+              },
+              {
+                "tangible": true,
+                "intersecable": false,
+                "offset": {
+                  "x": 320,
+                  "y": 679
+                },
+                "rotation": 25.0,
+                "fillColor": "#eee9e9",
+                "textColor": "#000000",
+                "borderColor": "#606060",
+                "scaleX": 0.0,
+                "scaleY": 0.0,
+                "shape": {
+                  "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+                  "points": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 8
+                    },
+                    {
+                      "x": 0,
+                      "y": 8
+                    }
+                  ]
+                }
+              },
+              {
+                "tangible": true,
+                "intersecable": false,
+                "offset": {
+                  "x": 320,
+                  "y": 679
+                },
+                "rotation": 0.0,
+                "fillColor": "#eee9e9",
+                "textColor": "#000000",
+                "borderColor": "#606060",
+                "scaleX": 0.0,
+                "scaleY": 0.0,
+                "shape": {
+                  "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+                  "points": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 8
+                    },
+                    {
+                      "x": 0,
+                      "y": 8
+                    }
+                  ]
+                }
+              }
+            ],
+            "tags": [],
+            "actions": {
+              "propertyList": [
+                [
+                  "open",
+                  "Execute it successfully"
+                ],
+                [
+                  "measured open",
+                  "Execute it successfully"
+                ],
+                [
+                  "close",
+                  "Execute it successfully"
+                ]
+              ]
+            },
+            "triggers": {
+              "propertyList": [
+                [
+                  "",
+                  "openness"
+                ]
+              ]
+            },
+            "currentRepresentation": 0,
+            "envUUID": "df28cda0-a866-11e2-9e96-0800200c9a66"
+          }
+        ],
+        "texture": "wood.jpg"
+      },
+      {
+        "name": "Office",
+        "description": "",
+        "room": true,
+        "shape": {
+          "points": [
+            {
+              "x": 20,
+              "y": 620
+            },
+            {
+              "x": 305,
+              "y": 620
+            },
+            {
+              "x": 305,
+              "y": 905
+            },
+            {
+              "x": 20,
+              "y": 905
+            }
+          ]
+        },
+        "objects": [],
+        "texture": "wood.jpg"
+      },
+      {
+        "name": "Livingroom",
+        "description": "",
+        "room": true,
+        "shape": {
+          "points": [
+            {
+              "x": 305,
+              "y": 680
+            },
+            {
+              "x": 390,
+              "y": 680
+            },
+            {
+              "x": 390,
+              "y": 730
+            },
+            {
+              "x": 1195,
+              "y": 730
+            },
+            {
+              "x": 1195,
+              "y": 1170
+            },
+            {
+              "x": 900,
+              "y": 1170
+            },
+            {
+              "x": 900,
+              "y": 910
+            },
+            {
+              "x": 730,
+              "y": 910
+            },
+            {
+              "x": 730,
+              "y": 1170
+            },
+            {
+              "x": 305,
+              "y": 1170
+            }
+          ]
+        },
+        "objects": [
+          {
+            "name": "Bedroom door",
+            "description": "Connects Bedroom to Livingroom",
+            "actAs": "virtual",
+            "type": "EnvObject.Gate",
+            "uuid": "06e94ceb-7218-4fff-9305-668d94d0fa59",
+            "hierarchy": "it.freedomotic.objects.impl.Gate",
+            "protocol": "unknown",
+            "phisicalAddress": "unknown",
+            "behaviors": [
+              {
+                "name": "open",
+                "description": "asd",
+                "active": true,
+                "priority": -1,
+                "readOnly": false,
+                "value": false
+              },
+              {
+                "name": "openness",
+                "description": "asd",
+                "active": true,
+                "priority": -1,
+                "readOnly": false,
+                "value": 0,
+                "max": 100,
+                "min": 0,
+                "scale": 1,
+                "step": 1
+              }
+            ],
+            "representation": [
+              {
+                "tangible": true,
+                "intersecable": false,
+                "offset": {
+                  "x": 320,
+                  "y": 679
+                },
+                "rotation": 0.0,
+                "fillColor": "#eee9e9",
+                "textColor": "#000000",
+                "borderColor": "#606060",
+                "scaleX": 0.0,
+                "scaleY": 0.0,
+                "shape": {
+                  "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+                  "points": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 8
+                    },
+                    {
+                      "x": 0,
+                      "y": 8
+                    }
+                  ]
+                }
+              },
+              {
+                "tangible": true,
+                "intersecable": false,
+                "offset": {
+                  "x": 320,
+                  "y": 679
+                },
+                "rotation": 25.0,
+                "fillColor": "#eee9e9",
+                "textColor": "#000000",
+                "borderColor": "#606060",
+                "scaleX": 0.0,
+                "scaleY": 0.0,
+                "shape": {
+                  "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+                  "points": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 8
+                    },
+                    {
+                      "x": 0,
+                      "y": 8
+                    }
+                  ]
+                }
+              },
+              {
+                "tangible": true,
+                "intersecable": false,
+                "offset": {
+                  "x": 320,
+                  "y": 679
+                },
+                "rotation": 0.0,
+                "fillColor": "#eee9e9",
+                "textColor": "#000000",
+                "borderColor": "#606060",
+                "scaleX": 0.0,
+                "scaleY": 0.0,
+                "shape": {
+                  "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+                  "points": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 8
+                    },
+                    {
+                      "x": 0,
+                      "y": 8
+                    }
+                  ]
+                }
+              }
+            ],
+            "tags": [],
+            "actions": {
+              "propertyList": [
+                [
+                  "open",
+                  "Execute it successfully"
+                ],
+                [
+                  "measured open",
+                  "Execute it successfully"
+                ],
+                [
+                  "close",
+                  "Execute it successfully"
+                ]
+              ]
+            },
+            "triggers": {
+              "propertyList": [
+                [
+                  "",
+                  "openness"
+                ]
+              ]
+            },
+            "currentRepresentation": 0,
+            "envUUID": "df28cda0-a866-11e2-9e96-0800200c9a66"
+          },
+          {
+            "name": "Kitchen door",
+            "description": "Connects Livingroom to Kitchen",
+            "actAs": "virtual",
+            "type": "EnvObject.Gate",
+            "uuid": "641d9d3f-c8ad-4a9b-824e-8f7285fbe12a",
+            "hierarchy": "it.freedomotic.objects.impl.Gate",
+            "protocol": "unknown",
+            "phisicalAddress": "unknown",
+            "behaviors": [
+              {
+                "name": "open",
+                "description": "asd",
+                "active": true,
+                "priority": -1,
+                "readOnly": false,
+                "value": false
+              },
+              {
+                "name": "openness",
+                "description": "asd",
+                "active": true,
+                "priority": -1,
+                "readOnly": false,
+                "value": 0,
+                "max": 100,
+                "min": 0,
+                "scale": 1,
+                "step": 1
+              }
+            ],
+            "representation": [
+              {
+                "tangible": true,
+                "intersecable": false,
+                "offset": {
+                  "x": 785,
+                  "y": 727
+                },
+                "rotation": 0.0,
+                "fillColor": "#eee9e9",
+                "textColor": "#000000",
+                "borderColor": "#606060",
+                "scaleX": 0.0,
+                "scaleY": 0.0,
+                "shape": {
+                  "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+                  "points": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 8
+                    },
+                    {
+                      "x": 0,
+                      "y": 8
+                    }
+                  ]
+                }
+              },
+              {
+                "tangible": true,
+                "intersecable": false,
+                "offset": {
+                  "x": 785,
+                  "y": 727
+                },
+                "rotation": 25.0,
+                "fillColor": "#eee9e9",
+                "textColor": "#000000",
+                "borderColor": "#606060",
+                "scaleX": 0.0,
+                "scaleY": 0.0,
+                "shape": {
+                  "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+                  "points": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 8
+                    },
+                    {
+                      "x": 0,
+                      "y": 8
+                    }
+                  ]
+                }
+              },
+              {
+                "tangible": true,
+                "intersecable": false,
+                "offset": {
+                  "x": 785,
+                  "y": 727
+                },
+                "rotation": 0.0,
+                "fillColor": "#eee9e9",
+                "textColor": "#000000",
+                "borderColor": "#606060",
+                "scaleX": 0.0,
+                "scaleY": 0.0,
+                "shape": {
+                  "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+                  "points": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 8
+                    },
+                    {
+                      "x": 0,
+                      "y": 8
+                    }
+                  ]
+                }
+              }
+            ],
+            "tags": [],
+            "actions": {
+              "propertyList": [
+                [
+                  "open",
+                  "Execute it successfully"
+                ],
+                [
+                  "measured open",
+                  "Execute it successfully"
+                ],
+                [
+                  "close",
+                  "Execute it successfully"
+                ]
+              ]
+            },
+            "triggers": {
+              "propertyList": [
+                [
+                  "",
+                  "openness"
+                ]
+              ]
+            },
+            "currentRepresentation": 0,
+            "envUUID": "df28cda0-a866-11e2-9e96-0800200c9a66"
+          },
+          {
+            "name": "Livingroom light",
+            "description": "A light",
+            "actAs": "virtual",
+            "type": "EnvObject.ElectricDevice.Light",
+            "uuid": "76fd619c-617b-4fb7-9870-8f08164c4926",
+            "hierarchy": "it.freedomotic.objects.impl.Light",
+            "protocol": "unknown",
+            "phisicalAddress": "unknown",
+            "behaviors": [
+              {
+                "name": "powered",
+                "description": "",
+                "active": true,
+                "priority": -1,
+                "readOnly": false,
+                "value": false
+              },
+              {
+                "name": "brightness",
+                "description": "",
+                "active": true,
+                "priority": -1,
+                "readOnly": false,
+                "value": 0,
+                "max": 100,
+                "min": 0,
+                "scale": 1,
+                "step": 10
+              }
+            ],
+            "representation": [
+              {
+                "tangible": true,
+                "intersecable": false,
+                "offset": {
+                  "x": 729,
+                  "y": 769
+                },
+                "rotation": 0.0,
+                "icon": "light-off.png",
+                "fillColor": "#000000",
+                "textColor": "#000000",
+                "borderColor": "#000000",
+                "scaleX": 0.0,
+                "scaleY": 0.0,
+                "shape": {
+                  "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+                  "points": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 64,
+                      "y": 0
+                    },
+                    {
+                      "x": 64,
+                      "y": 64
+                    },
+                    {
+                      "x": 0,
+                      "y": 64
+                    }
+                  ]
+                }
+              },
+              {
+                "tangible": true,
+                "intersecable": false,
+                "offset": {
+                  "x": 729,
+                  "y": 769
+                },
+                "rotation": 0.0,
+                "icon": "light-on.png",
+                "fillColor": "#000000",
+                "textColor": "#000000",
+                "borderColor": "#000000",
+                "scaleX": 0.0,
+                "scaleY": 0.0,
+                "shape": {
+                  "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+                  "points": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 64,
+                      "y": 0
+                    },
+                    {
+                      "x": 64,
+                      "y": 64
+                    },
+                    {
+                      "x": 0,
+                      "y": 64
+                    }
+                  ]
+                }
+              }
+            ],
+            "tags": [],
+            "actions": {
+              "propertyList": [
+                [
+                  "turn off",
+                  "Execute it successfully"
+                ],
+                [
+                  "set brightness",
+                  "Execute it successfully"
+                ],
+                [
+                  "turn on",
+                  "Execute it successfully"
+                ]
+              ]
+            },
+            "triggers": {
+              "propertyList": [
+                [
+                  "",
+                  "brightness"
+                ]
+              ]
+            },
+            "currentRepresentation": 0,
+            "envUUID": "df28cda0-a866-11e2-9e96-0800200c9a66"
+          }
+        ],
+        "texture": "wood.jpg"
+      },
+      {
+        "name": "Kitchen",
+        "description": "",
+        "room": true,
+        "shape": {
+          "points": [
+            {
+              "x": 595,
+              "y": 730
+            },
+            {
+              "x": 595,
+              "y": 240
+            },
+            {
+              "x": 860,
+              "y": 240
+            },
+            {
+              "x": 860,
+              "y": 440
+            },
+            {
+              "x": 905,
+              "y": 440
+            },
+            {
+              "x": 905,
+              "y": 645
+            },
+            {
+              "x": 855,
+              "y": 645
+            },
+            {
+              "x": 855,
+              "y": 730
+            }
+          ]
+        },
+        "objects": [
+          {
+            "name": "Kitchen Light",
+            "description": "A light",
+            "actAs": "virtual",
+            "type": "EnvObject.ElectricDevice.Light",
+            "uuid": "21969e70-7e00-4a0d-a13f-a4728240d9d0",
+            "hierarchy": "it.freedomotic.objects.impl.Light",
+            "protocol": "unknown",
+            "phisicalAddress": "unknown",
+            "behaviors": [
+              {
+                "name": "powered",
+                "description": "",
+                "active": true,
+                "priority": -1,
+                "readOnly": false,
+                "value": false
+              },
+              {
+                "name": "brightness",
+                "description": "",
+                "active": true,
+                "priority": -1,
+                "readOnly": false,
+                "value": 0,
+                "max": 100,
+                "min": 0,
+                "scale": 1,
+                "step": 10
+              }
+            ],
+            "representation": [
+              {
+                "tangible": true,
+                "intersecable": false,
+                "offset": {
+                  "x": 726,
+                  "y": 482
+                },
+                "rotation": 0.0,
+                "icon": "light-off.png",
+                "fillColor": "#000000",
+                "textColor": "#000000",
+                "borderColor": "#000000",
+                "scaleX": 0.0,
+                "scaleY": 0.0,
+                "shape": {
+                  "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+                  "points": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 64,
+                      "y": 0
+                    },
+                    {
+                      "x": 64,
+                      "y": 64
+                    },
+                    {
+                      "x": 0,
+                      "y": 64
+                    }
+                  ]
+                }
+              },
+              {
+                "tangible": true,
+                "intersecable": false,
+                "offset": {
+                  "x": 726,
+                  "y": 482
+                },
+                "rotation": 0.0,
+                "icon": "light-on.png",
+                "fillColor": "#000000",
+                "textColor": "#000000",
+                "borderColor": "#000000",
+                "scaleX": 0.0,
+                "scaleY": 0.0,
+                "shape": {
+                  "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+                  "points": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 64,
+                      "y": 0
+                    },
+                    {
+                      "x": 64,
+                      "y": 64
+                    },
+                    {
+                      "x": 0,
+                      "y": 64
+                    }
+                  ]
+                }
+              }
+            ],
+            "tags": [],
+            "actions": {
+              "propertyList": [
+                [
+                  "turn off",
+                  "Execute it successfully"
+                ],
+                [
+                  "set brightness",
+                  "Execute it successfully"
+                ],
+                [
+                  "turn on",
+                  "Execute it successfully"
+                ]
+              ]
+            },
+            "triggers": {
+              "propertyList": [
+                [
+                  "",
+                  "brightness"
+                ]
+              ]
+            },
+            "currentRepresentation": 0,
+            "envUUID": "df28cda0-a866-11e2-9e96-0800200c9a66"
+          },
+          {
+            "name": "Kitchen door",
+            "description": "Connects Livingroom to Kitchen",
+            "actAs": "virtual",
+            "type": "EnvObject.Gate",
+            "uuid": "641d9d3f-c8ad-4a9b-824e-8f7285fbe12a",
+            "hierarchy": "it.freedomotic.objects.impl.Gate",
+            "protocol": "unknown",
+            "phisicalAddress": "unknown",
+            "behaviors": [
+              {
+                "name": "open",
+                "description": "asd",
+                "active": true,
+                "priority": -1,
+                "readOnly": false,
+                "value": false
+              },
+              {
+                "name": "openness",
+                "description": "asd",
+                "active": true,
+                "priority": -1,
+                "readOnly": false,
+                "value": 0,
+                "max": 100,
+                "min": 0,
+                "scale": 1,
+                "step": 1
+              }
+            ],
+            "representation": [
+              {
+                "tangible": true,
+                "intersecable": false,
+                "offset": {
+                  "x": 785,
+                  "y": 727
+                },
+                "rotation": 0.0,
+                "fillColor": "#eee9e9",
+                "textColor": "#000000",
+                "borderColor": "#606060",
+                "scaleX": 0.0,
+                "scaleY": 0.0,
+                "shape": {
+                  "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+                  "points": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 8
+                    },
+                    {
+                      "x": 0,
+                      "y": 8
+                    }
+                  ]
+                }
+              },
+              {
+                "tangible": true,
+                "intersecable": false,
+                "offset": {
+                  "x": 785,
+                  "y": 727
+                },
+                "rotation": 25.0,
+                "fillColor": "#eee9e9",
+                "textColor": "#000000",
+                "borderColor": "#606060",
+                "scaleX": 0.0,
+                "scaleY": 0.0,
+                "shape": {
+                  "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+                  "points": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 8
+                    },
+                    {
+                      "x": 0,
+                      "y": 8
+                    }
+                  ]
+                }
+              },
+              {
+                "tangible": true,
+                "intersecable": false,
+                "offset": {
+                  "x": 785,
+                  "y": 727
+                },
+                "rotation": 0.0,
+                "fillColor": "#eee9e9",
+                "textColor": "#000000",
+                "borderColor": "#606060",
+                "scaleX": 0.0,
+                "scaleY": 0.0,
+                "shape": {
+                  "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+                  "points": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 0
+                    },
+                    {
+                      "x": 60,
+                      "y": 8
+                    },
+                    {
+                      "x": 0,
+                      "y": 8
+                    }
+                  ]
+                }
+              }
+            ],
+            "tags": [],
+            "actions": {
+              "propertyList": [
+                [
+                  "open",
+                  "Execute it successfully"
+                ],
+                [
+                  "measured open",
+                  "Execute it successfully"
+                ],
+                [
+                  "close",
+                  "Execute it successfully"
+                ]
+              ]
+            },
+            "triggers": {
+              "propertyList": [
+                [
+                  "",
+                  "openness"
+                ]
+              ]
+            },
+            "currentRepresentation": 0,
+            "envUUID": "df28cda0-a866-11e2-9e96-0800200c9a66"
+          }
+        ],
+        "texture": "wood.jpg"
+      },
+      {
+        "name": "Bathroom",
+        "description": "",
+        "room": true,
+        "shape": {
+          "points": [
+            {
+              "x": 390,
+              "y": 240
+            },
+            {
+              "x": 595,
+              "y": 240
+            },
+            {
+              "x": 595,
+              "y": 505
+            },
+            {
+              "x": 390,
+              "y": 505
+            }
+          ]
+        },
+        "objects": [],
+        "texture": "wood.jpg"
+      },
+      {
+        "name": "Dress room",
+        "description": "",
+        "room": true,
+        "shape": {
+          "points": [
+            {
+              "x": 390,
+              "y": 505
+            },
+            {
+              "x": 595,
+              "y": 505
+            },
+            {
+              "x": 595,
+              "y": 730
+            },
+            {
+              "x": 390,
+              "y": 730
+            }
+          ]
+        },
+        "objects": [],
+        "texture": "wood.jpg"
+      },
+      {
+        "name": "Garage",
+        "description": "",
+        "room": true,
+        "shape": {
+          "points": [
+            {
+              "x": 990,
+              "y": 240
+            },
+            {
+              "x": 1460,
+              "y": 240
+            },
+            {
+              "x": 1460,
+              "y": 730
+            },
+            {
+              "x": 990,
+              "y": 730
+            }
+          ]
+        },
+        "objects": [],
+        "texture": "wood.jpg"
+      },
+      {
+        "name": "Bathroom Small",
+        "description": "",
+        "room": true,
+        "shape": {
+          "points": [
+            {
+              "x": 855,
+              "y": 645
+            },
+            {
+              "x": 905,
+              "y": 645
+            },
+            {
+              "x": 905,
+              "y": 570
+            },
+            {
+              "x": 990,
+              "y": 570
+            },
+            {
+              "x": 990,
+              "y": 730
+            },
+            {
+              "x": 855,
+              "y": 730
+            }
+          ]
+        },
+        "objects": [],
+        "texture": "wood.jpg"
+      },
+      {
+        "name": "Utility room",
+        "description": "",
+        "room": true,
+        "shape": {
+          "points": [
+            {
+              "x": 905,
+              "y": 440
+            },
+            {
+              "x": 860,
+              "y": 440
+            },
+            {
+              "x": 860,
+              "y": 240
+            },
+            {
+              "x": 990,
+              "y": 240
+            },
+            {
+              "x": 990,
+              "y": 570
+            },
+            {
+              "x": 905,
+              "y": 570
+            }
+          ]
+        },
+        "objects": [],
+        "texture": "wood.jpg"
+      },
+      {
+        "name": "Upstairs",
+        "description": "",
+        "room": true,
+        "shape": {
+          "points": [
+            {
+              "x": 730,
+              "y": 910
+            },
+            {
+              "x": 900,
+              "y": 910
+            },
+            {
+              "x": 900,
+              "y": 1170
+            },
+            {
+              "x": 730,
+              "y": 1170
+            }
+          ]
+        },
+        "objects": [
+          {
+            "name": "Kitchen Light-145",
+            "description": "A light",
+            "actAs": "virtual",
+            "type": "EnvObject.ElectricDevice.Light",
+            "uuid": "24b01c5b-ea44-4a6e-8d89-f3f468765840",
+            "hierarchy": "it.freedomotic.objects.impl.Light",
+            "protocol": "unknown",
+            "phisicalAddress": "unknown",
+            "behaviors": [
+              {
+                "name": "powered",
+                "description": "",
+                "active": true,
+                "priority": -1,
+                "readOnly": false,
+                "value": false
+              },
+              {
+                "name": "brightness",
+                "description": "",
+                "active": true,
+                "priority": -1,
+                "readOnly": false,
+                "value": 0,
+                "max": 100,
+                "min": 0,
+                "scale": 1,
+                "step": 10
+              }
+            ],
+            "representation": [
+              {
+                "tangible": true,
+                "intersecable": false,
+                "offset": {
+                  "x": 766,
+                  "y": 1001
+                },
+                "rotation": 0.0,
+                "icon": "light-off.png",
+                "fillColor": "#000000",
+                "textColor": "#000000",
+                "borderColor": "#000000",
+                "scaleX": 0.0,
+                "scaleY": 0.0,
+                "shape": {
+                  "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+                  "points": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 64,
+                      "y": 0
+                    },
+                    {
+                      "x": 64,
+                      "y": 64
+                    },
+                    {
+                      "x": 0,
+                      "y": 64
+                    }
+                  ]
+                }
+              },
+              {
+                "tangible": true,
+                "intersecable": false,
+                "offset": {
+                  "x": 766,
+                  "y": 1001
+                },
+                "rotation": 0.0,
+                "icon": "light-on.png",
+                "fillColor": "#000000",
+                "textColor": "#000000",
+                "borderColor": "#000000",
+                "scaleX": 0.0,
+                "scaleY": 0.0,
+                "shape": {
+                  "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+                  "points": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 64,
+                      "y": 0
+                    },
+                    {
+                      "x": 64,
+                      "y": 64
+                    },
+                    {
+                      "x": 0,
+                      "y": 64
+                    }
+                  ]
+                }
+              }
+            ],
+            "tags": [],
+            "actions": {
+              "propertyList": [
+                [
+                  "turn off",
+                  "Execute it successfully"
+                ],
+                [
+                  "set brightness",
+                  "Execute it successfully"
+                ],
+                [
+                  "turn on",
+                  "Execute it successfully"
+                ]
+              ]
+            },
+            "triggers": {
+              "propertyList": [
+                [
+                  "",
+                  "brightness"
+                ]
+              ]
+            },
+            "currentRepresentation": 0,
+            "envUUID": "df28cda0-a866-11e2-9e96-0800200c9a66"
+          }
+        ],
+        "texture": "wood.jpg"
+      }
+    ],
+    "uuid": "df28cda0-a866-11e2-9e96-0800200c9a66"
+  }
+]}
