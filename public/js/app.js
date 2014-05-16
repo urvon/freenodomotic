@@ -16,6 +16,7 @@ var app = angular.module('myApp',
     $routeProvider.when('/login', {templateUrl: 'partial/login', controller: LoginCtrl});
     $routeProvider.when('/administration', {templateUrl: 'partial/admin', controller: LoginCtrl});
     $routeProvider.when('/composants', {templateUrl: 'partial/objects', controller: ObjectController});
+    $routeProvider.when('/plugins', { templateUrl: 'partial/plugins', controller: PluginController });
     $routeProvider.when('/administration/commandes', {templateUrl: 'partial/commands', controller: CommandController});
     $routeProvider.when('/administration/commandes/detail/:id', {templateUrl: 'partial/cmdDetail', controller: CmdDetailController});
     $routeProvider.otherwise({redirectTo: '/composants'});

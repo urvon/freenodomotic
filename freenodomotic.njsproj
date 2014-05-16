@@ -17,7 +17,9 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
-    <Compile Include="routes\restInterface.js" />
+    <Compile Include="config\config.js" />
+    <Compile Include="public\js\plugins.js" />
+    <Compile Include="routes\restApi.js" />
     <Content Include="public\img\freedomotic\barometer.png" />
     <Content Include="public\img\freedomotic\door.PNG" />
     <Content Include="public\img\freedomotic\grocerylist.gif" />
@@ -38,7 +40,7 @@
     <Content Include="public\img\freedomotic\thermostat.png" />
     <Content Include="public\img\freedomotic\togglebutton-off.png" />
     <Content Include="public\img\freedomotic\togglebutton-on.png" />
-    <Content Include="public\json\Commands.json" />
+    <Content Include="public\json\commands.json" />
     <Content Include="public\json\environements.json" />
     <Content Include="public\json\objects.json" />
     <Content Include="package.json" />
@@ -345,8 +347,10 @@
     <Content Include="views\partials\menu.jade" />
     <Content Include="views\partials\objects.jade" />
     <Content Include="views\partials\login.jade" />
+    <Content Include="views\partials\plugins.jade" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="config\" />
     <Folder Include="public" />
     <Folder Include="public\bootstrap" />
     <Folder Include="public\bootstrap\css" />

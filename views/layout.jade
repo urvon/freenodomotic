@@ -1,17 +1,35 @@
 !!!
-html(ng-app="myApp")
-  head
-    meta(charset='utf8')
-    base(href='/')
-    title Angular Express Bootstrap Seed App
-    link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
-    link(rel='stylesheet', href='/css/app.css')
-  body
-
-    .col-xs-1.col-sm-3(ng-controller="MenuController")
-        .navbar.navbar-inverse(role="navigation")
+html(lang='fr', ng-app="myApp")
+    head
+        meta(charset='UTF-8')
+        base(href='/')
+        title Angular Express Bootstrap Seed App
+        link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/css/app.css')
+    body
+        .header
+            .alert-danger.text-center(id='demoAlert')
+                strong Attention: serveur inaccessible. Mode démo uniquement
+            .navbar.navbar-default.navbar-inverse(role="navigation")
+                .navbar-header
+                    button.navbar-toggle(type="button", data-toggle="collapse", data-target=".navbar-ex1-collapse")
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand(href="#") Accueil             
+    
+                .collapse.navbar-collapse.navbar-ex1-collapse
+                  ul.nav.navbar-nav
+                    li
+                      a(href="/administration") Administration
+                    li  
+                      a(href="view2") Préférence
+                    li
+                      a(href="#",ua-logout) Déconnexion
+     
+        .hidden-xs.navbar.navbar-inverse(id="menu",role="navigation",ng-controller="MenuController")
             .navbar-header
-                //button.navbar-toggle(type="button", data-toggle="collapse", data-target=".navbar-ex2-collapse")
                 span.sr-only Toggle navigation
                 ul.nav.navbar-nav.nav-pills.navbar-toggle
                     li
@@ -25,14 +43,6 @@ html(ng-app="myApp")
                 ul.nav.navbar-nav.nav-pills
                     li
                         a.glyphicon.glyphicon-off(ng-repeat="menu in menus", href="{{menu.url}}")     {{menu.name}}
-                            span.badge {{34}}              
-            //li(class="dropdown")
-                a.btn.btn-default.dropdown-toggle(data-toggle="dropdown") Zones 
-                    b(class="caret")
-                    ul.dropdown-menu
-                        li
-                            a Zones 1
-                        li
-                            a Zone 2
+                            span.badge.right {{34}}              
 
-    block body
+        block body

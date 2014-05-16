@@ -1,27 +1,7 @@
 extends layout
 
 block body
-
-  .navbar.navbar-default.navbar-fixed-top.navbar-inverse(role="navigation")
-    .navbar-header
-      button.navbar-toggle(type="button", data-toggle="collapse", data-target=".navbar-ex1-collapse")
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      a.navbar-brand(href="#") Accueil
-    
-    .collapse.navbar-collapse.navbar-ex1-collapse
-      ul.nav.navbar-nav
-        li
-          a(href="/administration") Administration
-        li  
-          a(href="view2") Préférence
-        li
-          a(href="#",ua-logout) Déconnexion
-        li(ng-show="user.authenticated")
-          a(href="#",ua-logout) Welcome
-  .container      
+  .container.col-sm-offset-3      
     div(ng-controller='AppCtrl')
         div(class="col-xs-12 col-sm-9")
           div(ng-view)
@@ -42,6 +22,7 @@ block body
   script(src='js/filters.js')
   script(src='js/directives.js')
   script(src='js/objects.js')
+  script(src='js/plugins.js')
   script(src='js/commands.js')
   script(src='js/lib/jquery/jquery-2.0.3.min.js')
   script(src='bootstrap/js/bootstrap.min.js')

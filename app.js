@@ -10,7 +10,8 @@ var express = require('express'),
   path = require('path'),
   Stomp = require('stompjs'),
   io = require('socket.io'),
-  restClient = require('node-rest-client').Client;
+  config = require('./config/config'),
+  restApi = require('./routes/restApi');;
 
 var app = module.exports = express();
 
@@ -55,6 +56,7 @@ app.get('/partial/:name', routes.partial);
 
 // JSON API
 app.get('/api/name', api.name);
+app.get('/restApi/:name', restApi.name);
 
 // redirect all others to the index (HTML5 history)
 app.get('*', routes.index);
@@ -93,16 +95,4 @@ websocket.sockets.on('connection', function (socketio) {
 
     });
 });
-
-
-
-restClient = new restClient();
-
-// direct way
-//restClient.get("http://127.0.0.1:8111/v2/environments/?media=json", function(data, response){
-//    // parsed response body as js object
-//    console.log(data);
-//    // raw response
-//    console.log(response);
-//});
 

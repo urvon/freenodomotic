@@ -1,0 +1,8 @@
+﻿div(class="col-xs-12 col-sm-12 container",ng-controller="PluginController")
+    ul.list-group
+        li.list-group-item.list-group-item-success(ng-repeat="data in datas",ng-switch="data.isRunning") {{data.name}}
+            .button-right.glyphicon.glyphicon-play(ng-switch-when="true")
+            .button-right.glyphicon.glyphicon-stop(ng-switch-when="false")
+
+
+    

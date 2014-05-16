@@ -7,12 +7,21 @@
 var services = angular.module('myApp.services', ['ngResource']).
   value('version', '0.1');
 
-services.factory('objects',['$resource','$http',
-  function($resource,$http){
-      //return $http.get("/json/objects.json").succes(function(data){alert(data)});
-      return $resource('/json/objects.json', {}, {
-      query: {method:'GET', isArray:true}
-    });
+services.factory('getFreedomoticDatas',['$http',function($http){
+      //get commands
+    var factory = {      
+          query: function (type) {
+              var request = $http.get('/restApi/'+type).then(function (data, status, headers, config) {
+                  if (data.data.isDemo)
+                      $("#demoAlert").alert();
+                  else
+                      $("#demoAlert").hide();
+                  return data.data.list;
+              });
+              return request;             
+          }
+    }
+    return factory;
   }]);
 
 services.factory('shortName', [function(name, length) {

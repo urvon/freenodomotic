@@ -1,15 +1,10 @@
-﻿angular.module('myApp.controllers').controller('CommandController', ['$scope','$http',function($scope,$http,shortName) {
+﻿angular.module('myApp.controllers').controller('CommandController', ['$scope', '$http', 'getFreedomoticDatas', function ($scope, $http, getFreedomoticDatas) {
     
-    //get commands
-    var commands = [];
-    $http.get('/json/commands.json').
-    success(function(data, status, headers, config) {
-        commands = data.list;
-        $scope.datas = commands;
+    getFreedomoticDatas.query("commands").then(function (result) {
+        $scope.datas = result;
+    })
         
-    }).error(function(data, status, headers, config) {
-          $(".alert").alert();
-    });
+
 
     $scope.shortName1 = function(name, lenght){       
         //return shortName(name,lenght);

@@ -1,4 +1,4 @@
-﻿angular.module('myApp.controllers').controller('ObjectController', ['objects','$scope','$http','ngstomp', function(objects,$scope,$http,ngstomp) {
+﻿angular.module('myApp.controllers').controller('ObjectController', ['$scope','$http','ngstomp', function($scope,$http,ngstomp) {
     var freedomsocket = io.connect('http://0.0.0.0:61614');
     freedomsocket.on('event', function (data) {
         alert('received data');
@@ -9,6 +9,11 @@
     socket.on('event', function (data) {
         alert('received data');
     });
+
+    socket.on('getObject', function (data) {
+        alert('received data');
+    });
+
 
     //Get Zones
     var zones;
@@ -93,7 +98,7 @@
 +'</it.freedomotic.api.events.ObjectReceiveClick>' });
     }
     $scope.turnOff = function(object){
-        alert(object.name + ' turn off');
+        $("#demoAlert").hide();
     }
 /*=============================================*/
 }]);
