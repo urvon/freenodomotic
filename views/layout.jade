@@ -1,7 +1,7 @@
 !!!
 html(lang='fr', ng-app="myApp")
     head
-        meta(charset='UTF-8')
+        meta(charset='iso-8859-1')
         base(href='/')
         title Angular Express Bootstrap Seed App
         link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
@@ -23,12 +23,12 @@ html(lang='fr', ng-app="myApp")
                   ul.nav.navbar-nav
                     li
                       a(href="/administration") Administration
-                    li  
+                    li 
                       a(href="view2") Préférence
                     li
                       a(href="#",ua-logout) Déconnexion
      
-        .hidden-xs.navbar.navbar-inverse(id="menu",role="navigation",ng-controller="MenuController")
+        .hidden-xs.navbar(id="menu",role="navigation",ng-controller="MenuController")
             .navbar-header
                 span.sr-only Toggle navigation
                 ul.nav.navbar-nav.nav-pills.navbar-toggle

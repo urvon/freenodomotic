@@ -18,13 +18,16 @@ body {
     border-radius: 0;
 }
 #menu {
-    top: 80px;
+    top: 0px;
     position: fixed;
     bottom: 0;
     left: 0;
     margin: 0;
-    z-index:1000;
     border-radius: 0;
+    background-color:lavender;
+    box-shadow: 8px 8px 12px #aaa; 
+    background: linear-gradient( #f2f2f6, #fff);
+    padding-top: 90px;
 }
 .button-right {
     float: right;
