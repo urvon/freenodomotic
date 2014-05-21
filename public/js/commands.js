@@ -1,6 +1,6 @@
-﻿angular.module('myApp.controllers').controller('CommandController', ['$scope', '$http', 'getFreedomoticDatas', function ($scope, $http, getFreedomoticDatas) {
+﻿    angular.module('myApp.controllers').controller('CommandController', ['$scope', '$http', 'getFreedomoticDatas', function ($scope, $http, getFreedomoticDatas) {
     
-    getFreedomoticDatas.query("commands").then(function (result) {
+        getFreedomoticDatas.query("commands", {json: true}).then(function (result) {
         $scope.datas = result;
     })
         

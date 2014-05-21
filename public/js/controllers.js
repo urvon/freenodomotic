@@ -3,13 +3,55 @@
 var app = angular.module('myApp.controllers', []);
 /* Controllers */
 
-function callbackStomp(message){
-    alert(message);
-}
-
 function AppCtrl($scope, $http,$cookieStore) {
   
 }
+
+function DashBoardController() {
+    $(function () {
+        $('#container').highcharts({
+            title: {
+                text: 'Consomation électrique',
+                x: -20 //center
+            },
+            subtitle: {
+                text: 'Source: WorldClimate.com',
+                x: -20
+            },
+            xAxis: {
+                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+            },
+            yAxis: {
+                title: {
+                    text: 'Consomation (kWh)'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                valueSuffix: '°C'
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+            series: [{
+                name: 'Total',
+                data: [0.9, 2, 3.5, 8.4, 2.5, 17.0, 18.6, 10.9, 15.3, 9.0, 3.9, 1.0]
+            }, {
+                name: 'Cuisine',
+                data: [0, 1, 2, 0, 2, 7, 17.0, 6.6, 10.2, 10.3, 2.6, 4.8]
+            }]
+        });
+    });
+}
+
 
 app.controller('MenuController', ['$scope','$http','$resource', function($scope,$http,$resource) {
     var menus = [];
@@ -48,6 +90,10 @@ CmdDetailController.$inject = [];
 function ObjectController($scope, $rootScope, $http, $location) {
 }
 ObjectController.$inject = [];
+
+function ObjDetailController() {
+}
+
 
 function PluginController($scope, $rootScope, $http, $location) {
 }

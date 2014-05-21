@@ -1,9 +1,11 @@
-﻿div(class="col-xs-12 col-sm-12 container",ng-controller="PluginController")
+﻿div(class="col-xs-12 col-sm-12 container",ng-controller="PluginController")    
     ul.list-group
-        li.list-group-item.list-group-item-info(ng-repeat="data in datas",ng-switch="data.isRunning") {{data.name}}            
-            .button-right.glyphicon.glyphicon-play(ng-switch-when="true")
-            .button-right.glyphicon.glyphicon-stop(ng-switch-when="false")
-            .button-right.glyphicon.glyphicon-refresh
+        li.list-group-item(ng-repeat="data in datas") {{data.name}}
+            .btn-group.button-right            
+                button(type="button", class="btn btn-success", ng-disabled="data.isRunning")
+                    span(class="glyphicon glyphicon-play") Play
+                button(type="button", class="btn btn-danger", ng-disabled="!data.isRunning")
+                    span(class="glyphicon glyphicon-stop") Stop
 
 
     

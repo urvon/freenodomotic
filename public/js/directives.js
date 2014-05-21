@@ -10,6 +10,17 @@ var directives = angular.module('myApp.directives', []).
     };
   }]);
 
+directives.directive('myToggleObject', function () {
+    return {
+        link: function (scope, el, attrs) {
+            scope.myToggleObject2 = function (value) {
+                console.log("toto" + el);
+                return "toto";
+            }
+        }
+    }
+});
+
 directives.directive('checkUser', ['$rootScope', '$location', 'userSrv', function ($root, $location, userSrv) {
 	return {
 		link: function (scope, elem, attrs, ctrl) {

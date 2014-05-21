@@ -18,6 +18,7 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
     <Compile Include="config\config.js" />
+    <Compile Include="public\bootstrap\js\ui-bootstrap-tpls-0.11.0.js" />
     <Compile Include="public\js\plugins.js" />
     <Compile Include="routes\restApi.js" />
     <Content Include="public\img\freedomotic\barometer.png" />
@@ -341,9 +342,9 @@
     <Compile Include="public\js\lib\angular\i18n\angular-locale_zu.js" />
     <Content Include="views\partials\admin.jade" />
     <Content Include="views\partials\admin\cmdDetail.jade" />
-    <Content Include="views\partials\admin\objects.jade" />
-    <Content Include="views\partials\admin\commands.jade" />
+    <Content Include="views\partials\objDetail.jade" />
     <Content Include="views\partials\commands.jade" />
+    <Content Include="views\partials\dashboard.jade" />
     <Content Include="views\partials\menu.jade" />
     <Content Include="views\partials\objects.jade" />
     <Content Include="views\partials\login.jade" />

@@ -28,7 +28,7 @@ html(lang='fr', ng-app="myApp")
                     li
                       a(href="#",ua-logout) Déconnexion
      
-        .hidden-xs.navbar(id="menu",role="navigation",ng-controller="MenuController")
+        .navbar(id="menu",role="navigation",ng-controller="MenuController")
             .navbar-header
                 span.sr-only Toggle navigation
                 ul.nav.navbar-nav.nav-pills.navbar-toggle
@@ -44,5 +44,5 @@ html(lang='fr', ng-app="myApp")
                     li
                         a.glyphicon.glyphicon-off(ng-repeat="menu in menus", href="{{menu.url}}")     {{menu.name}}
                             span.badge.right {{34}}              
-
+        
         block body

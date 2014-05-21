@@ -1,9 +1,11 @@
-﻿angular.module('myApp.controllers').controller('ObjectController', ['$scope','$http','ngstomp', function($scope,$http,ngstomp) {
-    var freedomsocket = io.connect('http://0.0.0.0:61614');
-    freedomsocket.on('event', function (data) {
-        alert('received data');
-    }); 
-    freedomsocket.emit('/topic/VirtualTopic.app.event.sensor.object.behavior.clicked/','eezezez');
+﻿var app = angular.module('myApp.controllers');
+
+app.controller('ObjectController', ['$scope', '$http', '$location', function ($scope, $http, $location) {
+    //var freedomsocket = io.connect('http://0.0.0.0:61614');
+    //freedomsocket.on('event', function (data) {
+    //    alert('received data');
+    //}); 
+    //freedomsocket.emit('/topic/VirtualTopic.app.event.sensor.object.behavior.clicked/','eezezez');
         
     var socket = io.connect('http://localhost:3333');
     socket.on('event', function (data) {
@@ -62,6 +64,7 @@
             }
           $scope.objects = objects;
           $scope.zones = objectsByZone;
+          $scope.title = 'Composants';
         }).
         error(function(data, status, headers, config) {
           // log error
@@ -76,29 +79,63 @@
 /*================ Events ==========================*/
     $scope.turnOn = function(object){
                 
-        socket.emit('cmd', { target: '/queue/app.event.sensor.object.behavior.clicked',
-                             message: '<it.freedomotic.api.events.ObjectReceiveClick>'
-  +'<sender>PHPFreedomSensor</sender>'
-  +'<payload>'
-    +'<payload>'
-      +'<it.freedomotic.reactions.Statement>'
-        +'<logical>AND</logical>'
-        +'<attribute>Object</attribute>'
-        +'<operand>EQUAL</operand>'
-        +'<value>Kitchen Light</value>'
-      +'</it.freedomotic.reactions.Statement>'
-      +'<it.freedomotic.reactions.Statement>'
-       +' <logical>AND</logical>'
-        +'<attribute>click</attribute>'
-       +' <operand>EQUAL</operand>'
-        +'<value>SINGLE_CLICK</value>'
-      +'</it.freedomotic.reactions.Statement>'
-    +'</payload>'
-  +'</payload>'
-+'</it.freedomotic.api.events.ObjectReceiveClick>' });
+        socket.emit('cmd', {
+            target: '/topic/VirtualTopic.app.event.sensor.object.behavior.clicked',
+            message: 
+"<com.freedomotic.events.ObjectReceiveClick>"
++ "<eventName>ObjectReceiveClick</eventName>"
++ "<sender>AndroidFrontend</sender>"
++ "<payload>"
++ "  <payload>"
++ "    <com.freedomotic.reactions.Statement>"
++ "      <logical>AND</logical>"
++ "      <attribute>click</attribute>"
++ "      <operand>EQUALS</operand>"
++ "      <value>SINGLE_CLICK</value>"
++ "    </com.freedomotic.reactions.Statement>"
++ "    <com.freedomotic.reactions.Statement>"
++ "      <logical>AND</logical>"
++ "      <attribute>object.type</attribute>"
++ "      <operand>EQUALS</operand>"
++ "      <value>" + object.type + "</value>"
++ "    </com.freedomotic.reactions.Statement>"
++ "    <com.freedomotic.reactions.Statement>"
++ "      <logical>AND</logical>"
++ "      <attribute>object.name</attribute>"
++ "      <operand>EQUALS</operand>"
++ "      <value>"+ object.name +"</value>"
++ "    </com.freedomotic.reactions.Statement>"
++ "  </payload>"
++ "</payload>"
++ "</com.freedomotic.events.ObjectReceiveClick>"
+        });
+        $("#btn-on-" + object.uuid).addClass("btn-success");
+        $("#btn-off-" + object.uuid).removeClass("btn-success");
+        $("#img-" + object.uuid).attr("src", "/img/freedomotic/light-on.png");
     }
-    $scope.turnOff = function(object){
-        $("#demoAlert").hide();
+    $scope.turnOff = function (object) {
+        this.myToggleObject2("ee");
+        var header = $(".panel.panel-default > div.panel-heading:contains(" + object.name + ")")[0];
+        
+        $("#btn-off-" + object.uuid).addClass("btn-success");
+        $("#btn-on-" + object.uuid).removeClass("btn-success");
+        $("#img-" + object.uuid).attr("src","/img/freedomotic/light-off.png");
+    }
+
+    $scope.edit = function (name) {
+        $location.path('/administration/composant/' + name)
     }
 /*=============================================*/
+}]);
+
+app.controller('ObjDetailController', ['$scope', '$routeParams','getFreedomoticDatas', function ObjDetailController($scope, $routeParams,getFreedomoticDatas) {
+    getFreedomoticDatas.query("objects/json=true").then(function (result) {
+        $scope.datas = result;
+    })
+
+    $scope.name = $routeParams.name;
+
+    /*================ Events ==========================*/
+    
+    /*==================================================*/
 }]);

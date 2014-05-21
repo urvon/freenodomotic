@@ -20,6 +20,11 @@
         res.json(null);
     }
 
+    if (req.param('param2') != null)
+        url += req.param('param2');
+    if (req.param('json') == true)
+        url += config.jsonSuffix;
+
     rest.get(url, function (error, data) {     
         if (data == null) {
             var file = require('../public/json/' + req.param('name') + '.json');

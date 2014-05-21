@@ -3,24 +3,27 @@
   strong Warning Better check yourself, you're not looking too good.
 
 div(class="col-xs-12 col-sm-12 container", ng-controller="ObjectController")
+    button.btn.btn-large.btn-success(data-toggle="tooltip", title="Ajouter un composant")
+            span.glyphicon.glyphicon-plus
     h1 Composant
-
+        
     .row.container-fluid(ng-repeat="zone in zones")
         .panel-group(id="accordion")
             .panel.panel-default
                 .panel-heading(data-toggle="collapse", data-parent="#accordion", href="#collapse{{zone.name}}")
-                    h4(class="panel-title") {{zone.name}}
+                    h4(class="panel-title") {{zone.name}}                        
                 .panel-collapse.collapse.in(id="collapse{{zone.name}}")
                     .panel-body                    
                         .col-xs-12.col-sm-4(ng-repeat="object in zone.objects")
                             .panel.panel-default
-                                .panel-heading.text-center {{object.name}}
+                                .panel-heading.text-center {{object.name}}   
+                                    span.glyphicon.glyphicon-pencil(ng-click="edit(object.name)")
                                 .panel-body.text-center
-                                    img(ng-src="/img/freedomotic/{{object.representation[0].icon}}")
+                                    img(id="img-{{object.uuid}}", ng-src="/img/freedomotic/{{object.representation[0].icon}}")
                                     br
                                     .btn-group
-                                        button(class="btn btn-default", ng-click="turnOn(object)") On
-                                        button(class="btn btn-default", ng-click="turnOff(object)") Off
+                                        button(id="btn-on-{{object.uuid}}", class="btn btn-default", ng-click="turnOn(object)", my-toggle-object="on") On
+                                        button(id="btn-off-{{object.uuid}}", class="btn btn-default", ng-click="turnOff(object)",my-toggle-object="off") Off
    
                  
     

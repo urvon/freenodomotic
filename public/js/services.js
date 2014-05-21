@@ -10,8 +10,8 @@ var services = angular.module('myApp.services', ['ngResource']).
 services.factory('getFreedomoticDatas',['$http',function($http){
       //get commands
     var factory = {      
-          query: function (type) {
-              var request = $http.get('/restApi/'+type).then(function (data, status, headers, config) {
+          query: function (url,postData) {
+              var request = $http.post('/restApi/'+url,postData).then(function (data, status, headers, config) {
                   if (data.data.isDemo)
                       $("#demoAlert").alert();
                   else
@@ -29,9 +29,5 @@ services.factory('shortName', [function(name, length) {
     if(name.length > length)
         shortName = shortName.substring(1,length) + '...';
     return shortName;
-}]);
-
-services.factory('ngstomp', ['$rootScope',function($rootScope) {
-    var shortName = Stomp.overTCP('CELAD-P070', 61666);
 }]);
 

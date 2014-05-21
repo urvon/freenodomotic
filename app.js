@@ -56,7 +56,7 @@ app.get('/partial/:name', routes.partial);
 
 // JSON API
 app.get('/api/name', api.name);
-app.get('/restApi/:name', restApi.name);
+app.post('/restApi/:name', restApi.name);
 
 // redirect all others to the index (HTML5 history)
 app.get('*', routes.index);
@@ -69,6 +69,20 @@ var server = http.createServer(app).listen(port, function () {
   console.log('Express server listening on port ' + port);
 });
 
+
+//var Stomp = require('stomp-client');
+//var destination = '/topic/VirtualTopic.app.event.sensor.object.behavior.clicked';
+//var client = new Stomp('127.0.0.1', 61666, '', '');
+
+//client.connect(function (sessionId) {
+//    client.subscribe(destination, function (body, headers) {
+//        console.log('This is the body of a message on the subscribed queue:', body);
+//    });
+
+//    client.publish(destination, 'Oh herrow', { transformation: 'jms-object-xml' });
+//});
+
+
 /**
 * Create websocket
 */
@@ -76,7 +90,8 @@ var websocket = io.listen(server);
 websocket.sockets.on('connection', function (socketio) {
     /*connect freedomotic stomp client*/
     var stompClient = Stomp.overTCP('CELAD-P070', 61666);
-    stompClient.connect('admin', 'admin', function(frame) {
+    stompClient.debug = true;
+    stompClient.connect('', '', function(frame) {
         console.log('connected to Stomp');
         
         /*freedomotic event received*/
@@ -91,7 +106,7 @@ websocket.sockets.on('connection', function (socketio) {
     socketio.on('cmd', function (data) {
         console.log ('sending a stomp message at ' + data.target);
         console.log('message : ' + data.message);
-        stompClient.send(data.target, {transformation:'jms-object-xml'}, data.message);
+        stompClient.send(data.target, {transformation: 'jms-object-xml' }, data.message);
 
     });
 });
