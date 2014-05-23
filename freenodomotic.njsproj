@@ -21,6 +21,7 @@
     <Compile Include="public\bootstrap\js\ui-bootstrap-tpls-0.11.0.js" />
     <Compile Include="public\js\plugins.js" />
     <Compile Include="routes\messageBuilder.js" />
+    <Compile Include="routes\messageDispatcher.js" />
     <Compile Include="routes\restApi.js" />
     <Content Include="public\img\freedomotic\barometer.png" />
     <Content Include="public\img\freedomotic\door.PNG" />

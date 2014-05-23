@@ -1,8 +1,50 @@
-﻿exports.buildMessage = function (req, res) {
-    var xml2js = require('xml2js');
+﻿var xml2js = require('xml2js');
 
-    var builder = new xml2js.Builder({ rootName: 'toto' });
-    var obj = { name: "Super", Surname: "Man", age: 23 };
+exports.buildMessage = function (event, payloads) {
+    var builder = new xml2js.Builder(
+        {
+            rootName: 'com.freedomotic.events.' + event,
+            headless: true
+        });
 
+    var obj = createEvent(event,payloads);
     var xml = builder.buildObject(obj);
+
+    return xml;
 };
+
+function createEvent(event, payloads) {
+    var event = {
+        eventName: event,
+        sender: 'FreenodomoticFronted',
+        payload: createPayloads(payloads)
+    };
+    return event
+}
+
+function createPayloads(payloads) {
+    var statement = {
+    }
+    var tab = [];
+    var tab2 = [];
+
+    for (var i in payloads) {
+        tab.push(createStatement(payloads[i].attr, payloads[i].value))
+    }
+    var statement = {
+        'com.freedomotic.reactions.Statement': tab 
+    }
+    tab2.push(statement);
+    return { payload: tab2 };
+}
+
+function createStatement(attr, value) {
+    var statement = {
+        logical: 'AND',
+        attribute: attr,
+        operand:'EQUALS',
+        value: value
+    }
+    return statement;
+}
+

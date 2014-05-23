@@ -75,6 +75,17 @@ app.controller('ObjectController', ['$scope', '$http', '$location', function ($s
     $scope.turnOn = function(object){
                 
         socket.emit('cmd', {
+            event: 'ObjectReceiveClick',
+            payload: [{
+                attr:'click',
+                value:'SINGLE_CLICK'
+            },{
+                attr:'object.type',
+                value:object.type
+            },{
+                attr:'object.name',
+                value:object.name
+    }],
             target: '/topic/VirtualTopic.app.event.sensor.object.behavior.clicked',
             message: 
 "<com.freedomotic.events.ObjectReceiveClick>"
