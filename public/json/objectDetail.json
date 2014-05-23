@@ -1,0 +1,133 @@
+﻿{"com.freedomotic.model.object.EnvObject": {
+  "name": "Livingroom light",
+  "description": "A light",
+  "actAs": "virtual",
+  "type": "EnvObject.ElectricDevice.Light",
+  "uuid": "76fd619c-617b-4fb7-9870-8f08164c4926",
+  "hierarchy": "com.freedomotic.objects.impl.Light",
+  "protocol": "unknown",
+  "phisicalAddress": "unknown",
+  "behaviors": [
+    {
+      "name": "powered",
+      "description": "",
+      "active": true,
+      "priority": -1,
+      "readOnly": false,
+      "value": false
+    },
+    {
+      "name": "brightness",
+      "description": "",
+      "active": true,
+      "priority": -1,
+      "readOnly": false,
+      "value": 0,
+      "max": 100,
+      "min": 0,
+      "scale": 1,
+      "step": 10
+    }
+  ],
+  "representation": [
+    {
+      "tangible": true,
+      "intersecable": false,
+      "offset": {
+        "x": 729,
+        "y": 769
+      },
+      "rotation": 0.0,
+      "icon": "light-off.png",
+      "fillColor": "#000000",
+      "textColor": "#000000",
+      "borderColor": "#000000",
+      "scaleX": 0.0,
+      "scaleY": 0.0,
+      "shape": {
+        "@class": "com.freedomotic.model.geometry.FreedomPolygon",
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 64,
+            "y": 0
+          },
+          {
+            "x": 64,
+            "y": 64
+          },
+          {
+            "x": 0,
+            "y": 64
+          }
+        ]
+      }
+    },
+    {
+      "tangible": true,
+      "intersecable": false,
+      "offset": {
+        "x": 729,
+        "y": 769
+      },
+      "rotation": 0.0,
+      "icon": "light-on.png",
+      "fillColor": "#000000",
+      "textColor": "#000000",
+      "borderColor": "#000000",
+      "scaleX": 0.0,
+      "scaleY": 0.0,
+      "shape": {
+        "@class": "com.freedomotic.model.geometry.FreedomPolygon",
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 64,
+            "y": 0
+          },
+          {
+            "x": 64,
+            "y": 64
+          },
+          {
+            "x": 0,
+            "y": 64
+          }
+        ]
+      }
+    }
+  ],
+  "tags": [],
+  "actions": {
+    "propertyList": [
+      [
+        "turn off",
+        "Execute it successfully"
+      ],
+      [
+        "set brightness",
+        "Execute it successfully"
+      ],
+      [
+        "turn on",
+        "Execute it successfully"
+      ]
+    ]
+  },
+  "triggers": {
+    "propertyList": [
+      [
+        "",
+        "brightness"
+      ]
+    ]
+  },
+  "currentRepresentation": 0,
+  "envUUID": "df28cda0-a866-11e2-9e96-0800200c9a66"
+}}

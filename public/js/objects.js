@@ -1,12 +1,7 @@
 ﻿var app = angular.module('myApp.controllers');
 
 app.controller('ObjectController', ['$scope', '$http', '$location', function ($scope, $http, $location) {
-    //var freedomsocket = io.connect('http://0.0.0.0:61614');
-    //freedomsocket.on('event', function (data) {
-    //    alert('received data');
-    //}); 
-    //freedomsocket.emit('/topic/VirtualTopic.app.event.sensor.object.behavior.clicked/','eezezez');
-        
+   
     var socket = io.connect('http://localhost:3333');
     socket.on('event', function (data) {
         alert('received data');
@@ -129,11 +124,15 @@ app.controller('ObjectController', ['$scope', '$http', '$location', function ($s
 }]);
 
 app.controller('ObjDetailController', ['$scope', '$routeParams','getFreedomoticDatas', function ObjDetailController($scope, $routeParams,getFreedomoticDatas) {
-    getFreedomoticDatas.query("objects/json=true").then(function (result) {
+    getFreedomoticDatas.query("triggers").then(function (result) {
         $scope.datas = result;
     })
+    getFreedomoticDatas.query("objects", { suffixe: $routeParams.name, json: true }).then(function (result) {
+        $scope.datas = result;
+        $scope.jsonDatas = JSON.stringify(result);
+    })
 
-    $scope.name = $routeParams.name;
+    $scope.name = $routeParams.object;
 
     /*================ Events ==========================*/
     

@@ -16,7 +16,16 @@ services.factory('getFreedomoticDatas',['$http',function($http){
                       $("#demoAlert").alert();
                   else
                       $("#demoAlert").hide();
-                  return data.data.list;
+                  var result;
+                  if (data.data.list != null)
+                      result = data.data.list;
+                  else {
+                      for (var propName in data.data) {
+                          result = data.data[propName];
+                      }                      
+                  }
+
+                  return result;
               });
               return request;             
           }

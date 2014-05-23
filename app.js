@@ -10,8 +10,9 @@ var express = require('express'),
   path = require('path'),
   Stomp = require('stompjs'),
   io = require('socket.io'),
+  xml2js = require('xml2js'),
   config = require('./config/config'),
-  restApi = require('./routes/restApi');;
+  restApi = require('./routes/restApi');
 
 var app = module.exports = express();
 
@@ -68,7 +69,6 @@ var port = '3333'
 var server = http.createServer(app).listen(port, function () {
   console.log('Express server listening on port ' + port);
 });
-
 
 //var Stomp = require('stomp-client');
 //var destination = '/topic/VirtualTopic.app.event.sensor.object.behavior.clicked';

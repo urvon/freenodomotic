@@ -20,6 +20,7 @@
     <Compile Include="config\config.js" />
     <Compile Include="public\bootstrap\js\ui-bootstrap-tpls-0.11.0.js" />
     <Compile Include="public\js\plugins.js" />
+    <Compile Include="routes\messageBuilder.js" />
     <Compile Include="routes\restApi.js" />
     <Content Include="public\img\freedomotic\barometer.png" />
     <Content Include="public\img\freedomotic\door.PNG" />
@@ -43,6 +44,7 @@
     <Content Include="public\img\freedomotic\togglebutton-on.png" />
     <Content Include="public\json\commands.json" />
     <Content Include="public\json\environements.json" />
+    <Content Include="public\json\objectDetail.json" />
     <Content Include="public\json\objects.json" />
     <Content Include="package.json" />
     <Content Include="public\json\plugins.json" />

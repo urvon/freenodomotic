@@ -4,18 +4,48 @@
     //Nav tabs
     tabset 
         tab(heading="Formulaire")
+            //General
+            fieldset
+                legend Composant
+                .row
+                    .col-xs-3.col-sm-3
+                        label Nom:                    
+                    .col-xs-3.col-sm-3
+                        input(ng-model="datas.name")
+                .row
+                    .col-xs-3.col-sm-3
+                        label Description:                    
+                    .col-xs-3.col-sm-3
+                        input(ng-model="datas.description")
+                .row
+                    .col-xs-3.col-sm-3
+                        label Uuid:                    
+                    .col-xs-3.col-sm-3
+                        input(ng-model="datas.uuid", ng-disabled="true")
+                .row
+                    .col-xs-3.col-sm-3
+                        label Type:                    
+                    .col-xs-3.col-sm-3
+                         input(ng-model="datas.type")
+                                  
+            br
+            //Actions
             fieldset
                 legend Actions
-                div action1
-                div action2
-                div action3
-                div action4  
+                div(ng-repeat="data in datas.actions.propertyList") {{data}}
                 button.btn.btn-success.dropdown-toggle Ajouter  
                     span.caret
+            br
+            //Trigger
+            fieldset
+                legend Déclancheurs
+                div(ng-repeat="data in datas.actions.propertyList") {{data}}
+                button.btn.btn-success.dropdown-toggle Ajouter  
+                    span.caret
+
         tab(heading="Xml")
-            pre dfdsfdfsdfsdf
-             |sfsdfsdfsdfsdf
-             |sfsdfsdfsdf
-             |   sdf   sdfsdf     <dsfsdf>dsdsdfsdf
-    
-    button.btn.btn-primary Enregistrer
+            pre {{jsonDatas}}
+        
+    .row
+        br
+        button.btn.btn-primary Enregistrer
