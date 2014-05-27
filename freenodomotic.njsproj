@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{5448d508-99a1-4165-9cf9-b4fd684ecda4}</ProjectGuid>
     <ProjectHome />
-    <ProjectView>ShowAllFiles</ProjectView>
+    <ProjectView>ProjectFiles</ProjectView>
     <StartupFile>app.js</StartupFile>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -44,7 +44,7 @@
     <Content Include="public\img\freedomotic\togglebutton-off.png" />
     <Content Include="public\img\freedomotic\togglebutton-on.png" />
     <Content Include="public\json\commands.json" />
-    <Content Include="public\json\environements.json" />
+    <Content Include="public\json\environments.json" />
     <Content Include="public\json\objectDetail.json" />
     <Content Include="public\json\objects.json" />
     <Content Include="package.json" />

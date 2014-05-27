@@ -4,6 +4,10 @@ body {
   padding-top:100px;
 }
 
+hr {
+    border-color: #808080;
+}
+
 #demoAlert {
     padding: 5px;
     
@@ -17,17 +21,24 @@ body {
     z-index:1000;
     border-radius: 0;
 }
-#menu {
+.nav-sidebar {
+    margin-right: -8%;
+    margin-bottom: 20px;
+    margin-left: -28px;
+    font-size: 16px;
+}
+.sidebar {
     top: 0px;
     position: fixed;
     bottom: 0;
     left: 0;
     margin: 0;
-    border-radius: 0;
-    background-color:lavender;
-    box-shadow: 8px 8px 12px #aaa; 
-    background: linear-gradient( #f2f2f6, #fff);
     padding-top: 90px;
+    border-radius: 0;
+    box-shadow: 8px 8px 12px #aaa; 
+    /*background: linear-gradient( #222222, #222222);*/
+    background-color: #222222;
+    
 }
 .button-right {
     float: right;

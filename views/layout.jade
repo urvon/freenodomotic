@@ -1,7 +1,7 @@
-!!!
+
 html(lang='fr', ng-app="myApp")
     head
-        meta(charset='iso-8859-1')
+        meta(charset="utf-16")
         base(href='/')
         title Angular Express Bootstrap Seed App
         link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
@@ -27,22 +27,40 @@ html(lang='fr', ng-app="myApp")
                       a(href="view2") Préférence
                     li
                       a(href="#",ua-logout) Déconnexion
-     
-        .navbar(id="menu",role="navigation",ng-controller="MenuController")
-            .navbar-header
-                span.sr-only Toggle navigation
-                ul.nav.navbar-nav.nav-pills.navbar-toggle
-                    li
-                        a.glyphicon.glyphicon-off
-                    li
-                        a.glyphicon.glyphicon-off
-                    li
-                        a.glyphicon.glyphicon-off
+        .container-fluid
+            .row 
+                .sidebar.col-sm-3.col-xs-1(ng-controller="MenuController")
+                    .navbar-header
+                        span.sr-only Toggle navigation
+                        ul.nav.nav-sidebar.navbar-toggle
+                            li
+                                a.glyphicon.glyphicon-globe(href="/zones")
+                            li
+                                a.glyphicon.glyphicon-off(href="/composants")
+                            li
+                                a.glyphicon.glyphicon-phone(href="/plugins")
+                            li 
+                                a.glyphicon.glyphicon-flash(href="/administration/commandes")
+                            li 
+                                a.glyphicon.glyphicon-time(href="/triggers")
                                             
-            .collapse.navbar-collapse.navbar-ex2-collapse
-                ul.nav.navbar-nav.nav-pills
-                    li
-                        a.glyphicon.glyphicon-off(ng-repeat="menu in menus", href="{{menu.url}}")     {{menu.name}}
-                            span.badge.right {{34}}              
-        
-        block body
+                    .collapse.navbar-collapse.navbar-ex2-collapse
+                        ul.nav.nav-sidebar
+                            li.active
+                                a.glyphicon.glyphicon-globe(href="/zones")  Zones
+                                    span.badge.right(ng-bind="nbZone")
+                            li
+                                a.glyphicon.glyphicon-off(href="/composants")  Composants
+                                    span.badge.right(ng-bind="nbObj") 
+                            li
+                                a.glyphicon.glyphicon-phone(href="/plugins")  Plugins
+                                    span.badge.right(ng-bind="nbPlug")
+                            li 
+                                a.glyphicon.glyphicon-flash(href="/administration/commandes")  Commandes
+                                    span.badge.right(ng-bind="nbCmd") 
+                            li 
+                                a.glyphicon.glyphicon-time(href="/triggers")  Déclancheurs
+                                    span.badge.right 0              
+          
+            .container.col-xs-offset-1.col-sm-offset-3.col-xs-11.col-sm-9(ng-controller='AppCtrl')     
+                block body

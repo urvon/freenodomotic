@@ -4,6 +4,9 @@
 var config = {
     freedomoticIP: '127.0.0.1',
     freedomoticRestPort: '8111',
+    enabledSecurity: true,
+    user: 'admin',
+    password:'admin',
 
     jsonSuffix:'?media=json',
     urlEnvironment: 'http://127.0.0.1:8111/v2/environments/',

@@ -14,7 +14,7 @@
             url = config.urlPlugin;
             break;
         case "commands":
-            url = config.urlCommand;
+            url = config.urlCommandUser;
             break;
         case "triggers":
             url = config.urlTrigger;
@@ -28,18 +28,35 @@
     if (req.param('json') == true)
         url += config.jsonSuffix;
 
-    rest.get(url, function (error, data) {
-        if (data == null) {
-            var obj = req.param('name');
-            if (req.param('suffixe') != null)
-                obj = "objectDetail";
+    if (config.enabledSecurity) {
+        var login = { username: config.user, password: config.password };
+        rest.get(url, login, restResult);
+    }
+    else {
+        rest.get(url, restResult);
+    }
 
-            var file = require('../public/json/' + obj + '.json');
-            var data = file;
-            data.isDemo = true;
-            res.json(file);
-        }
-        else
-            res.json(data);
-    });
+
+    function restResult(error, data, status) {
+            if (error == 401) {
+                console.log("erreur 401: Le serveur freedomotic a besoin d'une authentification")
+            }
+            if (data == null) {
+                var obj = req.param('name');
+                if (req.param('suffixe') != null)
+                    obj = "objectDetail";
+
+                var file = require('../public/json/' + obj + '.json');
+                var data = file;
+                data.isDemo = true;
+                res.json(file);
+            }
+            else
+                res.json(data);
+    };
+};
+
+exports.convert = function (req, res) {
+    var xmlConverter = require('../messageBuilder');
+    return xml.convert(req.param('data'));
 };

@@ -7,11 +7,30 @@
 var services = angular.module('myApp.services', ['ngResource']).
   value('version', '0.1');
 
-services.factory('getFreedomoticDatas',['$http',function($http){
+services.factory('getFreedomoticDatas',['$http','$q',function($http,$q){
       //get commands
     var factory = {      
-          query: function (url,postData) {
-              var request = $http.post('/restApi/'+url,postData).then(function (data, status, headers, config) {
+        query: function (url, postData) {
+            //var deferred = $q.defer();
+            //var promise = $http.post('/restApi/'+url,postData).success(function (data) {
+            //    if (data.isDemo)
+            //        $("#demoAlert").alert();
+            //    else
+            //        $("#demoAlert").hide();
+            //    var result;
+            //    if (data.list != null)
+            //        result = data.list;
+            //    else {
+            //        for (var propName in data.data) {
+            //            result = data.data[propName];
+            //        }                      
+            //    }
+            //    deferred.resolve(result);
+            //});
+            //// Return the promise to the controller
+            //return deferred.promise;
+
+            var request = $http.post('/restApi/'+url,postData).then(function (data, status, headers, config) {
                   if (data.data.isDemo)
                       $("#demoAlert").alert();
                   else
@@ -27,7 +46,13 @@ services.factory('getFreedomoticDatas',['$http',function($http){
 
                   return result;
               });
-              return request;             
+            return request;             
+          },
+          convert: function (data) {
+              var request = $http.post('restApi/convert', data).then(function (dataConverted, status) {
+                  return dataConverted;
+              });
+              return request; 
           }
     }
     return factory;

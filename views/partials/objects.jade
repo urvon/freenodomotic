@@ -1,29 +1,29 @@
-﻿.alert.alert-danger.alert-dismissable
+﻿.alert.alert-danger.alert-dismissable(ng-hide="true")
   button(type="button", class="close", data-dismiss="alert", aria-hidden="true") &times;
   strong Warning Better check yourself, you're not looking too good.
 
-.col-xs-12.col-sm-12.container(ng-controller="ObjectController")
+div(ng-controller="ObjectController")
     button.btn.btn-large.btn-success(data-toggle="tooltip", title="Ajouter un composant")
             span.glyphicon.glyphicon-plus
     h1 Composant
-        
-    .row.container-fluid(ng-repeat="zone in zones")
-        .panel-group(id="accordion")
-            .panel.panel-default
-                .panel-heading(data-toggle="collapse", data-parent="#accordion", href="#collapse{{zone.name}}")
-                    h4(class="panel-title") {{zone.name}}                        
+    .container-fluid(ng-repeat="zone in zones")
+        div(id="accordion")
+                .div(data-toggle="collapse", data-parent="#accordion", href="#collapse{{zone.name}}")
+                    h4 {{zone.name}}
+                        span.caret 
+                    hr                       
                 .panel-collapse.collapse.in(id="collapse{{zone.name}}")
                     .panel-body                    
                         .col-xs-12.col-sm-4(ng-repeat="object in zone.objects")
                             .panel.panel-default
                                 .panel-heading.text-center {{object.name}}   
-                                    span.glyphicon.glyphicon-pencil(ng-click="edit(object.name)")
+                                    span.glyphicon.glyphicon-pencil.text-right(ng-click="edit(object.name)")
                                 .panel-body.text-center
                                     img(id="img-{{object.uuid}}", ng-src="/img/freedomotic/{{object.representation[0].icon}}")
                                     br
                                     .btn-group
                                         button(id="btn-on-{{object.uuid}}", class="btn btn-default", ng-click="turnOn(object)", my-toggle-object="on") On
                                         button(id="btn-off-{{object.uuid}}", class="btn btn-default", ng-click="turnOff(object)",my-toggle-object="off") Off
-   
+ 
                  
     

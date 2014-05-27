@@ -1,11 +1,10 @@
-﻿    angular.module('myApp.controllers').controller('CommandController', ['$scope', '$http', 'getFreedomoticDatas', function ($scope, $http, getFreedomoticDatas) {
-    
-        getFreedomoticDatas.query("commands", {json: true}).then(function (result) {
+﻿angular.module('myApp.controllers').controller('CommandController', ['$scope', '$http', 'getFreedomoticDatas', function ($scope, $http, getFreedomoticDatas) {
+    getFreedomoticDatas.query("commands", {json: true}).then(function (result) {
         $scope.datas = result;
     })
+    $scope.title = 'Composants';
+
         
-
-
     $scope.shortName1 = function(name, lenght){       
         //return shortName(name,lenght);
     }

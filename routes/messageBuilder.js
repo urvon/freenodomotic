@@ -13,6 +13,18 @@ exports.buildMessage = function (event, payloads) {
     return xml;
 };
 
+//converti une données au format xml ou json
+exports.convert = function (data) {
+    var builder = new xml2js.Builder(
+        {
+            headless: true
+        });
+
+    var xml = builder.buildObject(data);
+
+    return xml;
+}
+
 function createEvent(event, payloads) {
     var event = {
         eventName: event,

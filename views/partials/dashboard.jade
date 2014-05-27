@@ -1,1 +1,14 @@
-﻿div(id="container", style="min-width: 310px; height: 400px; margin: 0 auto")
+﻿div(ng-controller="DashBoardController")
+    div(style='height: 305px;')
+        carousel(interval='myInterval')
+          slide
+            .item(id="container", style="min-width: 310px; height: 300px; margin: 0 auto")
+            .carousel-caption
+              h4 Slide {{$index}}
+              p {{slide.text}}
+          slide(ng-repeat='slide in slides', active='slide.active')
+            img(ng-src='{{slide.image}}', style='margin: auto;')
+            .carousel-caption
+              h4 Slide {{$index}}
+              p {{slide.text}}
+      

@@ -15,7 +15,7 @@ app.controller('ObjectController', ['$scope', '$http', '$location', function ($s
     //Get Zones
     var zones;
     var objectsByZone = [];
-    $http.get('/json/environements.json').
+    $http.get('/json/environments.json').
     success(function(data, status, headers, config) {
         zones = data.list[0].zones;
         $(".alert").alert();
@@ -74,78 +74,62 @@ app.controller('ObjectController', ['$scope', '$http', '$location', function ($s
 /*================ Events ==========================*/
     $scope.turnOn = function(object){
                 
-        socket.emit('cmd', {
-            event: 'ObjectReceiveClick',
-            payload: [{
-                attr:'click',
-                value:'SINGLE_CLICK'
-            },{
-                attr:'object.type',
-                value:object.type
-            },{
-                attr:'object.name',
-                value:object.name
-    }],
-            target: '/topic/VirtualTopic.app.event.sensor.object.behavior.clicked',
-            message: 
-"<com.freedomotic.events.ObjectReceiveClick>"
-+ "<eventName>ObjectReceiveClick</eventName>"
-+ "<sender>AndroidFrontend</sender>"
-+ "<payload>"
-+ "  <payload>"
-+ "    <com.freedomotic.reactions.Statement>"
-+ "      <logical>AND</logical>"
-+ "      <attribute>click</attribute>"
-+ "      <operand>EQUALS</operand>"
-+ "      <value>SINGLE_CLICK</value>"
-+ "    </com.freedomotic.reactions.Statement>"
-+ "    <com.freedomotic.reactions.Statement>"
-+ "      <logical>AND</logical>"
-+ "      <attribute>object.type</attribute>"
-+ "      <operand>EQUALS</operand>"
-+ "      <value>" + object.type + "</value>"
-+ "    </com.freedomotic.reactions.Statement>"
-+ "    <com.freedomotic.reactions.Statement>"
-+ "      <logical>AND</logical>"
-+ "      <attribute>object.name</attribute>"
-+ "      <operand>EQUALS</operand>"
-+ "      <value>"+ object.name +"</value>"
-+ "    </com.freedomotic.reactions.Statement>"
-+ "  </payload>"
-+ "</payload>"
-+ "</com.freedomotic.events.ObjectReceiveClick>"
-        });
+        socket.emit('cmd', GetToggleData(object));
+            
         $("#btn-on-" + object.uuid).addClass("btn-success");
         $("#btn-off-" + object.uuid).removeClass("btn-success");
         $("#img-" + object.uuid).attr("src", "/img/freedomotic/light-on.png");
     }
     $scope.turnOff = function (object) {
-        this.myToggleObject2("ee");
-        var header = $(".panel.panel-default > div.panel-heading:contains(" + object.name + ")")[0];
-        
-        $("#btn-off-" + object.uuid).addClass("btn-success");
+        socket.emit('cmd', GetToggleData(object));
+
+        $("#btn-off-" + object.uuid).addClass("btn-success").attr("ng-disabled","true");
         $("#btn-on-" + object.uuid).removeClass("btn-success");
         $("#img-" + object.uuid).attr("src","/img/freedomotic/light-off.png");
     }
-
     $scope.edit = function (name) {
         $location.path('/administration/composant/' + name)
     }
 /*=============================================*/
 }]);
 
+function GetToggleData(object) {
+    return {
+        event: 'ObjectReceiveClick',
+        payload: [{
+            attr: 'click',
+            value: 'SINGLE_CLICK'
+        }, {
+            attr: 'object.type',
+            value: object.type
+        }, {
+            attr: 'object.name',
+            value: object.name
+        }],
+        target: '/topic/VirtualTopic.app.event.sensor.object.behavior.clicked'
+    }
+}
+
 app.controller('ObjDetailController', ['$scope', '$routeParams','getFreedomoticDatas', function ObjDetailController($scope, $routeParams,getFreedomoticDatas) {
-    getFreedomoticDatas.query("triggers").then(function (result) {
-        $scope.datas = result;
-    })
+    //getFreedomoticDatas.query("triggers").then(function (result) {
+    //    $scope.datas = result;
+    //})
+
     getFreedomoticDatas.query("objects", { suffixe: $routeParams.name, json: true }).then(function (result) {
         $scope.datas = result;
         $scope.jsonDatas = JSON.stringify(result);
     })
+    //getFreedomoticDatas.convert()
+    //{
+    //    $scope.xmlDatas
+
+    //}
 
     $scope.name = $routeParams.object;
 
     /*================ Events ==========================*/
-    
+    $scope.submit = function () {
+        
+    }
     /*==================================================*/
 }]);
