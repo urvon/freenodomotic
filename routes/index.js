@@ -11,3 +11,8 @@ exports.partial = function (req, res) {
     var name = req.params.name;
   res.render('partials/' + name);
 };
+
+exports.component = function (req, res) {
+    var name = req.params.name;
+    res.render('components/' + name);
+};

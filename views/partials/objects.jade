@@ -3,9 +3,17 @@
   strong Warning Better check yourself, you're not looking too good.
 
 div(ng-controller="ObjectController")
+    h2 Composant
     button.btn.btn-large.btn-success(data-toggle="tooltip", title="Ajouter un composant")
             span.glyphicon.glyphicon-plus
-    h1 Composant
+    .text-right
+        .btn-group
+            button.btn-lg.btn.btn-default.active
+                span.glyphicon.glyphicon-th-large
+            button.btn-lg.btn.btn-default
+                span.glyphicon.glyphicon-th
+            button.btn-lg.btn.btn-default
+                span.glyphicon.glyphicon-th-list
     .container-fluid(ng-repeat="zone in zones")
         div(id="accordion")
                 .div(data-toggle="collapse", data-parent="#accordion", href="#collapse{{zone.name}}")
@@ -15,15 +23,6 @@ div(ng-controller="ObjectController")
                 .panel-collapse.collapse.in(id="collapse{{zone.name}}")
                     .panel-body                    
                         .col-xs-12.col-sm-4(ng-repeat="object in zone.objects")
-                            .panel.panel-default
-                                .panel-heading.text-center {{object.name}}   
-                                    span.glyphicon.glyphicon-pencil.text-right(ng-click="edit(object.name)")
-                                .panel-body.text-center
-                                    img(id="img-{{object.uuid}}", ng-src="/img/freedomotic/{{object.representation[0].icon}}")
-                                    br
-                                    .btn-group
-                                        button(id="btn-on-{{object.uuid}}", class="btn btn-default", ng-click="turnOn(object)", my-toggle-object="on") On
-                                        button(id="btn-off-{{object.uuid}}", class="btn btn-default", ng-click="turnOff(object)",my-toggle-object="off") Off
- 
+                            my-object(obj="{{object}}", name="{{object.name}}", icon="{{object.representation[0].icon}}", uuid="{{object.uuid}}")
                  
     

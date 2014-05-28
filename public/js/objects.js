@@ -1,7 +1,7 @@
 ﻿var app = angular.module('myApp.controllers');
 
 app.controller('ObjectController', ['$scope', '$http', '$location', function ($scope, $http, $location) {
-   
+    //$('.slider').slider();
     var socket = io.connect('http://localhost:3333');
     socket.on('event', function (data) {
         alert('received data');
@@ -68,28 +68,11 @@ app.controller('ObjectController', ['$scope', '$http', '$location', function ($s
     error(function(data, status, headers, config) {
       $(".alert-danger").alert();
     });
-
     
 
 /*================ Events ==========================*/
-    $scope.turnOn = function(object){
-                
-        socket.emit('cmd', GetToggleData(object));
-            
-        $("#btn-on-" + object.uuid).addClass("btn-success");
-        $("#btn-off-" + object.uuid).removeClass("btn-success");
-        $("#img-" + object.uuid).attr("src", "/img/freedomotic/light-on.png");
-    }
-    $scope.turnOff = function (object) {
-        socket.emit('cmd', GetToggleData(object));
-
-        $("#btn-off-" + object.uuid).addClass("btn-success").attr("ng-disabled","true");
-        $("#btn-on-" + object.uuid).removeClass("btn-success");
-        $("#img-" + object.uuid).attr("src","/img/freedomotic/light-off.png");
-    }
-    $scope.edit = function (name) {
-        $location.path('/administration/composant/' + name)
-    }
+    
+    
 /*=============================================*/
 }]);
 

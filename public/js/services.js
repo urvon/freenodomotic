@@ -56,7 +56,19 @@ services.factory('getFreedomoticDatas',['$http','$q',function($http,$q){
           }
     }
     return factory;
-  }]);
+}]);
+
+services.factory('freedomotic', ['$http', '$q', function ($http, $q) {
+    //get commands
+    var socket = io.connect('http://localhost:3333');
+
+    var factory = {
+        send: function (data) {
+            socket.emit('cmd', data);
+        }
+    }
+    return factory;
+}]);
 
 services.factory('shortName', [function(name, length) {
     var shortName = name;

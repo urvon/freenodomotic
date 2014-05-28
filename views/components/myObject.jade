@@ -1,0 +1,12 @@
+﻿.panel.panel-default
+    .panel-heading.text-center {{name}}  
+        span.glyphicon.glyphicon-pencil.text-right(ng-click="edit(name)")
+    .panel-body.text-center
+        img(id="img-{{uuid}}", ng-src="/img/freedomotic/{{icon}}")
+        br
+        //input.slider(data-slider-min='0', data-slider-max='100')
+        .btn-group
+            button(id="btn-on-{{uuid}}", class="btn btn-default", ng-click="turnOn(uuid)") On
+            button(id="btn-off-{{uuid}}", class="btn btn-default", ng-click="turnOff(uuid)") Off
+ 
+                 

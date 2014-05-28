@@ -19,6 +19,7 @@
   <ItemGroup>
     <Compile Include="config\config.js" />
     <Compile Include="public\bootstrap\js\ui-bootstrap-tpls-0.11.0.js" />
+    <Compile Include="public\js\lib\slider\js\bootstrap-slider.js" />
     <Compile Include="public\js\plugins.js" />
     <Compile Include="routes\messageBuilder.js" />
     <Compile Include="routes\messageDispatcher.js" />
@@ -49,6 +50,8 @@
     <Content Include="public\json\objects.json" />
     <Content Include="package.json" />
     <Content Include="public\json\plugins.json" />
+    <Content Include="public\js\lib\slider\css\slider.css" />
+    <Content Include="public\js\lib\slider\less\slider.less" />
     <Content Include="README.md" />
     <Compile Include="app.js" />
     <Compile Include="public\js\commands.js" />
@@ -60,6 +63,7 @@
     <Compile Include="public\js\objects.js" />
     <Compile Include="routes\api.js" />
     <Compile Include="routes\index.js" />
+    <Content Include="views\components\myObject.jade" />
     <Content Include="views\index.jade" />
     <Content Include="views\layout.jade" />
     <Content Include="public\css\app.css" />
@@ -369,8 +373,13 @@
     <Folder Include="public\js\lib\angular\i18n" />
     <Folder Include="public\js\lib\jquery" />
     <Folder Include="public\json\" />
+    <Folder Include="public\js\lib\slider\" />
+    <Folder Include="public\js\lib\slider\css\" />
+    <Folder Include="public\js\lib\slider\js\" />
+    <Folder Include="public\js\lib\slider\less\" />
     <Folder Include="routes" />
     <Folder Include="views" />
+    <Folder Include="views\components\" />
     <Folder Include="views\partials" />
     <Folder Include="views\partials\admin\" />
   </ItemGroup>
