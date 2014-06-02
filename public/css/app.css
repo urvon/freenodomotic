@@ -47,6 +47,28 @@ hr {
 .right {
      float: right;
 }
+.panel-heading {
+    padding: 10px 5px;
+}
+
+.widget-col {
+    border: 1px solid #000;
+    min-height: 150px;
+}
+.widget{
+    margin:0;
+}
+
+.widget .widget-heading{
+    cursor:pointer;
+}
+
+.widget .widget-body{
+    padding:0;
+}
+.widget .panel {
+    margin-bottom:0;
+}
 
 
   

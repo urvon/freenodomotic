@@ -7,64 +7,6 @@ function AppCtrl($scope, $http,$cookieStore) {
   
 }
 
-function DashBoardController($scope) {
-    $scope.myInterval = 5000;
-    var slides = $scope.slides = [];
-    $scope.addSlide = function () {
-        var newWidth = 600 + slides.length;
-        slides.push({
-            image: 'http://placekitten.com/' + newWidth + '/300',
-            text: ['More', 'Extra', 'Lots of', 'Surplus'][slides.length % 4] + ' ' +
-              ['Cats', 'Kittys', 'Felines', 'Cutes'][slides.length % 4]
-        });
-    };
-    for (var i = 0; i < 4; i++) {
-        $scope.addSlide();
-    }
-
-    $('#container').highcharts({
-        title: {
-            text: 'Consomation électrique',
-            x: -20 //center
-        },
-        subtitle: {
-            text: 'Source: WorldClimate.com',
-            x: -20
-        },
-        xAxis: {
-            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-        },
-        yAxis: {
-            title: {
-                text: 'Consomation (kWh)'
-            },
-            plotLines: [{
-                value: 0,
-                width: 1,
-                color: '#808080'
-            }]
-        },
-        tooltip: {
-            valueSuffix: '°C'
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle',
-            borderWidth: 0
-        },
-        series: [{
-            name: 'Total',
-            data: [0.9, 2, 3.5, 8.4, 2.5, 17.0, 18.6, 10.9, 15.3, 9.0, 3.9, 1.0]
-        }, {
-            name: 'Cuisine',
-            data: [0, 1, 2, 0, 2, 7, 17.0, 6.6, 10.2, 10.3, 2.6, 4.8]
-        }]
-    });
-}
-
-
 app.controller('MenuController', ['$scope', '$http', 'getFreedomoticDatas', function ($scope, $http, getFreedomoticDatas) {
     // get number elements for each menu
     getFreedomoticDatas.query("commands", { json: true }).then(function (result) {

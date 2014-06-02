@@ -1,14 +1,49 @@
 ﻿div(ng-controller="DashBoardController")
+    //Carousel
+    h2 Tableau de Bord
+    button.btn.btn-large.btn-success(tooltip="Epingler un widget",tooltip-placement="right",ng-click="open()")
+            span.glyphicon.glyphicon-plus
+
     div(style='height: 305px;')
         carousel(interval='myInterval')
-          slide
-            .item(id="container", style="min-width: 310px; height: 300px; margin: 0 auto")
+            slide
+            mychart(id="container", style="min-width: 650px; height: 300px; margin: 0 auto")
             .carousel-caption
-              h4 Slide {{$index}}
-              p {{slide.text}}
-          slide(ng-repeat='slide in slides', active='slide.active')
+                h4 Slide {{$index}}
+                p {{slide.text}}
+            slide(ng-repeat='slide in slides', active='slide.active')
             img(ng-src='{{slide.image}}', style='margin: auto;')
             .carousel-caption
-              h4 Slide {{$index}}
-              p {{slide.text}}
-      
+                h4 Slide {{$index}}
+                p {{slide.text}}
+
+    //Widget
+    #docking.row
+        .widget-col.col-sm-3.col-xs-4
+            .widget
+                div E-mail
+                div
+                    ul
+                        li roror
+                        li eoeoeo
+                        li eoeoze
+        .widget-col.col-sm-3.col-xs-4
+        .widget-col.col-sm-3.col-xs-4
+            .widget
+                div toto
+                div
+                    //my-object(obj="{{object}}", name="Lampe cuisine", icon="{{object.representation[0].icon}}", uuid="{{object.uuid}}")
+        .widget-col.col-sm-3.col-xs-4
+
+script(type="text/ng-template", id="myModalContent")
+    .modal-header
+        h3.modal-title I'm a modal!
+    .modal-body
+      ul
+        li(ng-repeat='item in items')
+          a(ng-click='selected.item = item') {{ item }}
+      | Selected:
+      b {{ selected.item }}
+    .modal-footer
+      button.btn.btn-primary(ng-click='ok()') OK
+      button.btn.btn-warning(ng-click='cancel()') Cancel
