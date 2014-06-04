@@ -2,6 +2,7 @@
 
 body {
   padding-top:100px;
+  background-color: #f3f3f3;
 }
 
 hr {
@@ -45,6 +46,12 @@ hr {
 .sidebar a:hover {
     color:#222222;
 }
+.sidebar-footer {
+    background-color: white;
+    bottom:0;
+    left:0;
+    position:fixed;
+}
 .button-right {
     float: right;
     cursor: pointer;
@@ -76,6 +83,10 @@ hr {
 }
 my-object img {
     min-height: 45px;
+}
+my-object .panel-body {
+    background-image: radial-gradient(white,#c9d8ed);
+
 }
 
 

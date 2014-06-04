@@ -63,8 +63,8 @@ html(lang='fr', ng-app="myApp")
                             li 
                                 a.glyphicon.glyphicon-time(href="/triggers")  D&eacute;clancheurs
                                     span.badge.right(ng-bind="nbTrigger")  
-                                     
-                     img(ng-src='/img/freedomotic_logo.png');              
+                     .sidebar-footer                
+                        img(ng-src='/img/freedomotic_logo.png');              
           
             .container.col-xs-offset-1.col-sm-offset-2.col-xs-11.col-sm-10(ng-controller='AppCtrl')     
                 block body
