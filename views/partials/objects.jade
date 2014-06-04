@@ -22,7 +22,7 @@ div(ng-controller="ObjectController")
                     hr                       
                 .panel-collapse.collapse.in(id="collapse{{zone.name}}")
                     .panel-body                    
-                        .col-xs-12.col-sm-4(ng-repeat="object in zone.objects")
+                        .col-xs-6.col-sm-2(ng-repeat="object in zone.objects")
                             my-object(obj="{{object}}", name="{{object.name}}", icon="{{object.representation[0].icon}}", uuid="{{object.uuid}}")
                  
     

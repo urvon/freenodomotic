@@ -76,37 +76,11 @@ app.controller('ObjectController', ['$scope', '$http', '$location', function ($s
 /*=============================================*/
 }]);
 
-function GetToggleData(object) {
-    return {
-        event: 'ObjectReceiveClick',
-        payload: [{
-            attr: 'click',
-            value: 'SINGLE_CLICK'
-        }, {
-            attr: 'object.type',
-            value: object.type
-        }, {
-            attr: 'object.name',
-            value: object.name
-        }],
-        target: '/topic/VirtualTopic.app.event.sensor.object.behavior.clicked'
-    }
-}
-
-app.controller('ObjDetailController', ['$scope', '$routeParams','getFreedomoticDatas', function ObjDetailController($scope, $routeParams,getFreedomoticDatas) {
-    //getFreedomoticDatas.query("triggers").then(function (result) {
-    //    $scope.datas = result;
-    //})
-
-    getFreedomoticDatas.query("objects", { suffixe: $routeParams.name, json: true }).then(function (result) {
+app.controller('ObjDetailController', ['$scope', '$routeParams', 'freedomotic', function ObjDetailController($scope, $routeParams, freedomotic) {
+    freedomotic.get('objects', { suffixe: 'livingroom light', json: true }).then(function (result) {
         $scope.datas = result;
         $scope.jsonDatas = JSON.stringify(result);
-    })
-    //getFreedomoticDatas.convert()
-    //{
-    //    $scope.xmlDatas
-
-    //}
+    });
 
     $scope.name = $routeParams.object;
 

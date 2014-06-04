@@ -10,6 +10,93 @@ var app = angular.module('myApp.directives', []).
     };
   }]);
 
+
+app.directive('myObject', function ($timeout, $location, freedomotic) {
+    return {
+        priority: -1000,
+        restrict: 'E',
+        transclude: true,
+        scope: {obj:"@",name:'@', icon:'@', uuid:'@'},
+        templateUrl: 'component/myObject',
+        link: function (scope, element, attr) {
+            //$('.slider').slider();
+            attr.$observe('obj', function (value) {
+                if (value) {
+                    initValue(scope.obj);
+                }
+            });
+            scope.turnOn = function (object) {               
+                freedomotic.send(getToggleData(scope.obj));
+                setActive(JSON.parse(scope.obj),true);                
+            }
+            scope.turnOff = function (object) {
+                freedomotic.send(getToggleData(scope.obj));
+                setActive(JSON.parse(scope.obj),false);               
+            }
+            scope.edit = function (name) {
+                $location.path('/administration/composant/' + scope.name)
+            }
+
+        }
+    };
+
+    function initValue(object) {
+        var obj = JSON.parse(object);
+        for (var i in obj.behaviors) {
+            var behavior = obj.behaviors[i]
+            if (behavior != null && behavior.name == "powered") {
+                setActive(obj,behavior.value);
+            }
+        }
+    }
+
+    function setActive(object, isActive) {
+        if (isActive) {
+            $("#btn-on-" + object.uuid).addClass("btn-success");
+            $("#btn-off-" + object.uuid).removeClass("btn-danger");
+            $("#img-" + object.uuid).attr("src", "/img/freedomotic/light-on.png");
+        }
+        else {
+            $("#btn-off-" + object.uuid).addClass("btn-danger").attr("ng-disabled", "true");
+            $("#btn-on-" + object.uuid).removeClass("btn-success");
+            $("#img-" + object.uuid).attr("src", "/img/freedomotic/light-off.png");
+        }
+    }
+
+    function getToggleData(obj) {
+        var object = JSON.parse(obj);
+        return {
+            event: 'ObjectReceiveClick',
+            payload: [{
+                attr: 'click',
+                value: 'SINGLE_CLICK'
+            }, {
+                attr: 'object.type',
+                value: object.type
+            }, {
+                attr: 'object.name',
+                value: object.name
+            }],
+            target: '/topic/VirtualTopic.app.event.sensor.object.behavior.clicked'
+        }
+    }
+});
+
+app.directive('myWidget', function () {
+    return {
+        restrict: 'E',
+        transclude: true,
+        scope: { },
+        templateUrl: 'component/myWidget',
+        link: function (scope, element, attr) {
+            
+        },
+        add: function (scope, element, attr) {
+            element.append('<my-widget><my-object obj="scope"/></my-widget>');
+        }
+    };
+});
+
 app.directive('mychart', function (version) {
     return {
         restrict: 'E',
@@ -56,83 +143,5 @@ app.directive('mychart', function (version) {
             });
         }
     }
-    
-});
 
-app.directive('myObject', function ($timeout, $location, freedomotic) {
-    return {
-        restrict: 'E',
-        transclude: true,
-        scope: {obj:"@",name:'@', icon:'@', uuid:'@'},
-        templateUrl: 'component/myObject',
-        link: function (scope, element, attr) {
-            //$('.slider').slider();
-            initValue(scope.obj);
-            scope.turnOn = function (object) {               
-                freedomotic.send(getToggleData(scope.obj));
-                setActive(JSON.parse(scope.obj),true);                
-            }
-            scope.turnOff = function (object) {
-                freedomotic.send(getToggleData(scope.obj));
-                setActive(JSON.parse(scope.obj),false);               
-            }
-            scope.edit = function (name) {
-                $location.path('/administration/composant/' + scope.name)
-            }
-
-        }
-    };
-
-    function initValue(object) {
-        var obj = JSON.parse(object);
-        for (var i in obj.behaviors) {
-            var behavior = obj.behaviors[i]
-            if (behavior != null && behavior.name == "powered") {
-                setActive(obj,behavior.value);
-            }
-        }
-    }
-
-    function setActive(object, isActive) {
-        if (isActive) {
-            $("#btn-on-" + object.uuid).addClass("btn-success");
-            $("#btn-off-" + object.uuid).removeClass("btn-success");
-            $("#img-" + object.uuid).attr("src", "/img/freedomotic/light-on.png");
-        }
-        else {
-            $("#btn-off-" + object.uuid).addClass("btn-success").attr("ng-disabled", "true");
-            $("#btn-on-" + object.uuid).removeClass("btn-success");
-            $("#img-" + object.uuid).attr("src", "/img/freedomotic/light-off.png");
-        }
-    }
-
-    function getToggleData(obj) {
-        var object = JSON.parse(obj);
-        return {
-            event: 'ObjectReceiveClick',
-            payload: [{
-                attr: 'click',
-                value: 'SINGLE_CLICK'
-            }, {
-                attr: 'object.type',
-                value: object.type
-            }, {
-                attr: 'object.name',
-                value: object.name
-            }],
-            target: '/topic/VirtualTopic.app.event.sensor.object.behavior.clicked'
-        }
-    }
-});
-
-app.directive('myWidget', function () {
-    return {
-        restrict: 'E',
-        transclude: true,
-        scope: { },
-        templateUrl: 'component/myWidget',
-        link: function (scope, element, attr) {
-            
-        }
-    };
 });

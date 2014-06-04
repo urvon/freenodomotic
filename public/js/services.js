@@ -65,6 +65,30 @@ services.factory('freedomotic', ['$http', '$q', function ($http, $q) {
     var factory = {
         send: function (data) {
             socket.emit('cmd', data);
+        },
+        get: function (object, parameter) {
+            var deferred = $q.defer();
+            var promise = $http.post('/restApi/' + object, parameter).success(function (data) {
+                if (data.isDemo)
+                    $("#demoAlert").alert();
+                else
+                    $("#demoAlert").hide();
+                var result;
+                if (data.list != null)
+                    result = data.list;
+                else {
+                    //for (var propName in data) {
+                    //    result = data[propName];
+                    //}
+                    //if isn't list, return the first element
+                    var sortedKeys = Object.keys(data).sort();
+                    var first = data[sortedKeys[0]];
+                    result = first;
+                }
+                deferred.resolve(result);
+            });
+            // Return the promise to the controller
+            return deferred.promise;
         }
     }
     return factory;

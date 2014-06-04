@@ -7,7 +7,6 @@ html(lang='fr', ng-app="myApp")
         link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
         link(rel='stylesheet', href='/css/app.css')
         link(rel='stylesheet',href='js/lib/slider/css/slider.css')
-        link(rel="stylesheet", href="js/lib/jqwidgets/styles/jqx.base.css", type="text/css")
 
     body
         .header
@@ -27,12 +26,12 @@ html(lang='fr', ng-app="myApp")
                     li
                       a(href="/administration") Administration
                     li 
-                      a(href="view2") Préférence
+                      a(href="view2") Pr&eacute;f&eacute;rence
                     li
-                      a(href="#",ua-logout) Déconnexion
+                      a(href="#") D&eacute;connexion
         .container-fluid
             .row 
-                .sidebar.col-sm-3.col-xs-1(ng-controller="MenuController")
+                .sidebar.col-sm-2.col-xs-1(ng-controller="MenuController")
                     .navbar-header
                         span.sr-only Toggle navigation
                         ul.nav.nav-sidebar.navbar-toggle
@@ -62,8 +61,8 @@ html(lang='fr', ng-app="myApp")
                                 a.glyphicon.glyphicon-flash(href="/administration/commandes")  Commandes
                                     span.badge.right(ng-bind="nbCmd") 
                             li 
-                                a.glyphicon.glyphicon-time(href="/triggers")  Déclancheurs
+                                a.glyphicon.glyphicon-time(href="/triggers")  D&eacute;clancheurs
                                     span.badge.right 0              
           
-            .container.col-xs-offset-1.col-sm-offset-3.col-xs-11.col-sm-9(ng-controller='AppCtrl')     
+            .container.col-xs-offset-1.col-sm-offset-2.col-xs-11.col-sm-10(ng-controller='AppCtrl')     
                 block body
