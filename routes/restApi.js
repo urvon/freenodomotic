@@ -43,13 +43,32 @@
             }
             if (data == null) {
                 var obj = req.param('name');
+
                 if (req.param('suffixe') != null)
                     obj = "objectDetail";
 
-                var file = require('../public/json/' + obj + '.json');
-                var data = file;
-                data.isDemo = true;
-                res.json(file);
+                //convert xml to json
+                if (!req.param('json')) {
+                    var fs = require('fs'),
+                    xml2js = require('xml2js'),
+                    path = require('path');
+
+                    var parser = new xml2js.Parser();
+                    fs.readFile(path.join(__dirname , '../public/data/' + obj + '.xml'), function (err, data) {
+                        parser.parseString(data, function (err, result) {
+                            var data = result;
+                            data.isDemo = true;
+                            res.json(data);
+                        });
+                    });
+                }
+                else {
+                    var file = require('../public/data/' + obj + '.json');
+                    var data = file;
+                    data.isDemo = true;
+                    res.json(data);
+                }
+
             }
             else
                 res.json(data);

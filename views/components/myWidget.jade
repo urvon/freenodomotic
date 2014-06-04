@@ -1,5 +1,5 @@
 ﻿.panel.panel-info.widget(draggable="true", effect-allowed="copy", draggable-type="custom-object", draggable-data="{foo: 'bar'}")
     .panel-heading.widget-heading
-        button.close(type="button",data-dismiss="alert") &times
+        button.close(type="button",ng-click="close($event)") &times
     .panel-body.widget-body
         div(ng-transclude)

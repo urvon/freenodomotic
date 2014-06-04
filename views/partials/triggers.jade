@@ -1,0 +1,11 @@
+﻿div(class="col-xs-12 col-sm-12 container", ng-controller="TriggerController")
+    .panel.panel-default
+        table.table.table-striped.table-hover
+            thead
+                tr
+                    th Nom
+                    th Description
+            tbody(ng-repeat="data in datas.trigger")
+                tr(ng-click="edit(data.name)")                
+                    td {{data.name[0]}}
+                    td {{data.description[0]}} 

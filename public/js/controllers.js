@@ -6,7 +6,15 @@ var app = angular.module('myApp.controllers', []);
 function AppCtrl($scope, $http,$cookieStore) {
   
 }
+app.controller('TriggerController', ['$scope', 'freedomotic', function ($scope, freedomotic) {
+    freedomotic.get('triggers').then(function (result) {
+        $scope.datas = result;
+    });
+}]);
 
+function TriggerController($scope, $modal, $log, freedomotic) {
+
+}
 app.controller('MenuController', ['$scope', '$http', 'getFreedomoticDatas', function ($scope, $http, getFreedomoticDatas) {
     // get number elements for each menu
     getFreedomoticDatas.query("commands", { json: true }).then(function (result) {

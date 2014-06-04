@@ -89,7 +89,9 @@ app.directive('myWidget', function () {
         scope: { },
         templateUrl: 'component/myWidget',
         link: function (scope, element, attr) {
-            
+            scope.close = function ($event) {
+                $event.target.parentElement.parentElement.remove();
+            }
         },
         add: function (scope, element, attr) {
             element.append('<my-widget><my-object obj="scope"/></my-widget>');
