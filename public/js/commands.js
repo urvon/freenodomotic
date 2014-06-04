@@ -1,5 +1,5 @@
-﻿angular.module('myApp.controllers').controller('CommandController', ['$scope', '$http', 'getFreedomoticDatas', function ($scope, $http, getFreedomoticDatas) {
-    getFreedomoticDatas.query("commands", {json: true}).then(function (result) {
+﻿angular.module('myApp.controllers').controller('CommandController', ['$scope', '$http', 'freedomotic', function ($scope, $http, freedomotic) {
+    freedomotic.get("commands").then(function (result) {
         $scope.datas = result;
     })
     $scope.title = 'Composants';

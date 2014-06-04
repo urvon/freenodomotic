@@ -7,7 +7,7 @@ function AppCtrl($scope, $http,$cookieStore) {
   
 }
 app.controller('TriggerController', ['$scope', 'freedomotic', function ($scope, freedomotic) {
-    freedomotic.get('triggers').then(function (result) {
+    freedomotic.get('triggers',{xml:true}).then(function (result) {
         $scope.datas = result;
     });
 }]);
@@ -15,19 +15,22 @@ app.controller('TriggerController', ['$scope', 'freedomotic', function ($scope, 
 function TriggerController($scope, $modal, $log, freedomotic) {
 
 }
-app.controller('MenuController', ['$scope', '$http', 'getFreedomoticDatas', function ($scope, $http, getFreedomoticDatas) {
+app.controller('MenuController', ['$scope', '$http', 'freedomotic', function ($scope, $http, freedomotic) {
     // get number elements for each menu
-    getFreedomoticDatas.query("commands", { json: true }).then(function (result) {
+    freedomotic.get("commands").then(function (result) {
         $scope.nbCmd = result.length;
     });
-    getFreedomoticDatas.query("objects", { json: true }).then(function (result) {
+    freedomotic.get("objects").then(function (result) {
         $scope.nbObj = result.length;
     });
-    getFreedomoticDatas.query("plugins", { json: true }).then(function (result) {
+    freedomotic.get("plugins").then(function (result) {
         $scope.nbPlug = result.length;
     });
-    getFreedomoticDatas.query("environments", { json: true }).then(function (result) {
+    freedomotic.get("environments").then(function (result) {
         $scope.nbZone = result.length;
+    });
+    freedomotic.get("triggers", { xml: true }).then(function (result) {
+        $scope.nbTrigger = result.trigger.length;
     });
 }]);
 

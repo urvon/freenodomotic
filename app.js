@@ -5,7 +5,6 @@
 
 var express = require('express'),
   routes = require('./routes'),
-  api = require('./routes/api'),
   http = require('http'),
   path = require('path'),   
   xml2js = require('xml2js'),
@@ -45,7 +44,6 @@ app.get('/partial/:name', routes.partial);
 app.get('/component/:name', routes.component);
 
 // JSON API
-app.get('/api/name', api.name);
 app.post('/restApi/:name', restApi.name);
 app.post('/restApi/convert', restApi.convert);
 

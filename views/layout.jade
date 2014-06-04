@@ -11,7 +11,7 @@ html(lang='fr', ng-app="myApp")
     body
         .header
             .alert-danger.text-center(id='demoAlert')
-                strong Attention: serveur inaccessible. Mode démo uniquement
+                strong Attention: serveur inaccessible. Mode d&eacute;mo uniquement
             .navbar.navbar-default.navbar-inverse(role="navigation")
                 .navbar-header
                     button.navbar-toggle(type="button", data-toggle="collapse", data-target=".navbar-ex1-collapse")
@@ -62,7 +62,9 @@ html(lang='fr', ng-app="myApp")
                                     span.badge.right(ng-bind="nbCmd") 
                             li 
                                 a.glyphicon.glyphicon-time(href="/triggers")  D&eacute;clancheurs
-                                    span.badge.right 0              
+                                    span.badge.right(ng-bind="nbTrigger")  
+                                     
+                     img(ng-src='/img/freedomotic_logo.png');              
           
             .container.col-xs-offset-1.col-sm-offset-2.col-xs-11.col-sm-10(ng-controller='AppCtrl')     
                 block body

@@ -53,6 +53,7 @@
     <Content Include="public\data\objects.json" />
     <Content Include="package.json" />
     <Content Include="public\data\plugins.json" />
+    <Content Include="public\img\freedomotic_logo.png" />
     <Content Include="public\js\lib\slider\css\slider.css" />
     <Content Include="public\js\lib\slider\less\slider.less" />
     <Content Include="README.md" />
@@ -64,7 +65,6 @@
     <Compile Include="public\js\lib\stomp.js" />
     <Compile Include="public\js\login.js" />
     <Compile Include="public\js\objects.js" />
-    <Compile Include="routes\api.js" />
     <Compile Include="routes\index.js" />
     <Content Include="views\components\myObject.jade" />
     <Content Include="views\components\myWidget.jade" />

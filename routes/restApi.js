@@ -25,7 +25,7 @@
 
     if (req.param('suffixe') != null)
         url += req.param('suffixe');
-    if (req.param('json') == true)
+    if (!req.param('xml'))
         url += config.jsonSuffix;
 
     if (config.enabledSecurity) {
@@ -48,7 +48,7 @@
                     obj = "objectDetail";
 
                 //convert xml to json
-                if (!req.param('json')) {
+                if (req.param('xml')) {
                     var fs = require('fs'),
                     xml2js = require('xml2js'),
                     path = require('path');

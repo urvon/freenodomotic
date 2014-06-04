@@ -36,9 +36,14 @@ hr {
     padding-top: 90px;
     border-radius: 0;
     box-shadow: 8px 8px 12px #aaa; 
-    /*background: linear-gradient( #222222, #222222);*/
-    background-color: #222222;
-    
+    background-color: #222222;    
+}
+.sidebar a {
+    color:white;
+    border-bottom: 1px ridge;
+}
+.sidebar a:hover {
+    color:#222222;
 }
 .button-right {
     float: right;

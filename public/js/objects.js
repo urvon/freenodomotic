@@ -15,13 +15,13 @@ app.controller('ObjectController', ['$scope', '$http', '$location', function ($s
     //Get Zones
     var zones;
     var objectsByZone = [];
-    $http.get('/json/environments.json').
+    $http.get('/data/environments.json').
     success(function(data, status, headers, config) {
         zones = data.list[0].zones;
         $(".alert").alert();
 
           //Get objects
-        $http.get('/json/objects.json').
+        $http.get('/data/objects.json').
         success(function(data, status, headers, config) {
             var objects = data.list;
             //foreach objects
