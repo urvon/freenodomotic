@@ -14,7 +14,7 @@ var app = angular.module('myApp',
         'draganddrop'])
   .config(['$routeProvider', '$locationProvider', '$httpProvider', function($routeProvider, $locationProvider, $httpProvider) {   
     $routeProvider.when('/', { templateUrl: 'partial/dashBoard', controller: DashBoardController });
-    $routeProvider.when('/login', { templateUrl: 'partial/login', controller: LoginCtrl });
+    $routeProvider.when('/test', { templateUrl: 'partial/test', controller: dndCtrl });
     $routeProvider.when('/administration', {templateUrl: 'partial/admin', controller: LoginCtrl});
     $routeProvider.when('/composants', {templateUrl: 'partial/objects', controller: ObjectController});
     $routeProvider.when('/plugins', { templateUrl: 'partial/plugins', controller: PluginController });

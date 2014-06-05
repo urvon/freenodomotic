@@ -1,0 +1,13 @@
+﻿#dnd-container(ng-app='App', ng-controller='dndCtrl', ng-cloak='ng-cloak')
+    div(ui-drop-listener='dropListener', data-model='someArrays.list0')
+        .btn.btn-info.btn-block(ui-draggable='ui-draggable', ng-repeat='item in someArrays.list0', data-index='{{$index}}')
+          | {{item.name}}
+      div(ui-drop-listener='dropListener', data-model='someArrays.list1', style='margin-left: 20px;')
+        .btn.btn-info.btn-block(ui-draggable='ui-draggable', ng-repeat='item in someArrays.list1', data-index='{{$index}}')
+          | {{item.name}}
+      div(ui-drop-listener='dropListener', data-model='someArrays.list2')
+        .btn.btn-info.btn-block(ui-draggable='ui-draggable', ng-repeat='item in someArrays.list2', data-index='{{$index}}')
+          | {{item.name}}
+      div(ui-drop-listener='dropListener', data-model='someArrays.list3', style='margin-left: 20px;')
+        .btn.btn-info.btn-block(ui-draggable='ui-draggable', ng-repeat='item in someArrays.list3', data-index='{{$index}}')
+          | {{item.name}}

@@ -34,10 +34,54 @@ app.controller('MenuController', ['$scope', '$http', 'freedomotic', function ($s
     });
 }]);
 
-app.controller('AdminController', ['$scope','$http','$resource', function($scope,$http,$resource) {
+app.controller('dndCtrl', ['$scope', 'someArrays', function ($scope, someArrays) {
+    $scope.someArrays = someArrays;
 
+    $scope.dropListener = function (eDraggable, eDroppable) {
+
+        var isDropForbidden = function (aTarget, item) {
+            if (aTarget.some(function (i) {
+                return i.name == item.name;
+            })) {
+                return { reason: 'target already contains "' + item.name + '"' };
+            } else {
+                return false;
+            }
+        };
+
+        var onDropRejected = function (error) {
+            alert('Operation not permitted: ' + error.reason);
+        };
+
+        var onDropComplete = function (eSrc, item, index) {
+            console.log('moved "' + item.name + ' from ' + eSrc.data('model') + '[' + index + ']' + ' to ' + eDroppable.data('model'));
+        };
+
+        var eSrc = eDraggable.parent();
+        var sSrc = eSrc.data('model');
+        var sTarget = eDroppable.data('model');
+
+        if (sSrc != sTarget) {
+            $scope.$apply(function () {
+                var index = eDraggable.data('index');
+                var aSrc = $scope.$eval(sSrc);
+                var aTarget = $scope.$eval(sTarget);
+                var item = aSrc[index];
+                var error = isDropForbidden(aTarget, item);
+                if (error) {
+                    onDropRejected(error);
+                } else {
+                    aTarget.push(item);
+                    aSrc.splice(index, 1);
+                    onDropComplete(eSrc, item, index);
+                }
+            });
+        }
+
+    };
 }]);
-
+function dndCtrl($scope, $rootScope, $http, $location) {
+}
 function LoginCtrl($scope, $rootScope, $http, $location) {
 }
 LoginCtrl.$inject = [];

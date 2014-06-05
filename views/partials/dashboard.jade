@@ -24,7 +24,7 @@
         .widget-col.col-sm-3.col-xs-4
         .widget-col.col-sm-3.col-xs-4
             my-widget
-                my-object(obj="{{object}}", name="{{object.name}}", icon="{{object.representation[0].icon}}", uuid="{{object.uuid}}")
+                my-object(obj="{{object}}", name="{{object.name}}", icon="{{object.representation[0].icon}}", uuid="{{object.uuid}}",pattern="mosaic")
         .widget-col.col-sm-3.col-xs-4
 
 script(type="text/ng-template", id="myModalContent")
@@ -37,7 +37,7 @@ script(type="text/ng-template", id="myModalContent")
                     .row
                         .col-sm-4.col-xs-4(ng-repeat="object in objects")
                             input(type="checkbox",name="selectedFruits[]",ng-model='object.isSelected',value="object.name",ng-click="toggleSelection(object.name)")
-                            my-object(obj="{{object}}", name="{{object.name}}", icon="{{object.representation[0].icon}}", uuid="{{object.uuid}}")
+                            my-object(obj="{{object}}", name="{{object.name}}", icon="{{object.representation[0].icon}}", uuid="{{object.uuid}}",pattern="mosaic")
                 tab(heading="Plugins")
             pagination(items-per-page='itemByPage', total-items="objects.length", ng-model="currentPage", ng-change="pageChanged(currentPage)",previous-text="Précédent",next-text="Suivant")
         .modal-footer

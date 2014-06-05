@@ -50,3 +50,33 @@ services.factory('shortName', [function(name, length) {
     return shortName;
 }]);
 
+services.factory('someArrays', ['$q', '$timeout', function ($q, $timeout) {
+    var deferred = $q.defer();
+    $timeout(function () {
+        deferred.resolve({
+            someArrays: {
+                list0: [
+                    { name: 'AngularJS' },
+                    { name: 'Is' },
+                    { name: 'teh' },
+                    { name: '@wesome' }
+                ],
+                list1: [
+                    { name: 'AngularJS' }
+                ],
+                list2: [
+                    { name: 'Is' },
+                    { name: 'rather good' }
+                ],
+                list3: [
+                    { name: '@wesome' },
+                    { name: 'MooTools' }
+                ]
+            }
+        });
+    }, 50);
+    return deferred.promise.then(function (result) {
+        return result.someArrays;
+    });
+}]);
+

@@ -45,6 +45,7 @@
 app.controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'freedomotic', function ($scope, $modalInstance, freedomotic) {
     var objects;
     $scope.itemByPage = 6;
+    
 
     freedomotic.get('objects', { json: true }).then(function (result) {
         objects = result;
@@ -94,6 +95,7 @@ function DashBoardController($scope, $modal, $log, freedomotic) {
 function ModalInstanceCtrl($scope, $modalInstance, freedomotic) {
     var objects;
     $scope.itemByPage = 6;
+    $scope.pattern = "mosaic";
 
     freedomotic.get('objects', { json: true }).then(function (result) {
         objects = result;

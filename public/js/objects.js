@@ -70,8 +70,11 @@ app.controller('ObjectController', ['$scope', '$http', '$location', function ($s
     });
     
 
-/*================ Events ==========================*/
-    
+    /*================ Events ==========================*/
+    $scope.pattern = "mosaic";
+    $scope.patternChanged = function (pattern) {
+        $scope.pattern = pattern;
+    }
     
 /*=============================================*/
 }]);

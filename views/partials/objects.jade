@@ -8,11 +8,11 @@ div(ng-controller="ObjectController")
             span.glyphicon.glyphicon-plus
     .text-right
         .btn-group
-            button.btn-lg.btn.btn-default.active
+            button.btn-lg.btn.btn-default.active(ng-click="patternChanged('mosaic')")
                 span.glyphicon.glyphicon-th-large
-            button.btn-lg.btn.btn-default
+            button.btn-lg.btn.btn-default(ng-click="patternChanged('mosaic')")
                 span.glyphicon.glyphicon-th
-            button.btn-lg.btn.btn-default
+            button.btn-lg.btn.btn-default(ng-click="patternChanged('list')")
                 span.glyphicon.glyphicon-th-list
     .container-fluid(ng-repeat="zone in zones")
         div(id="accordion")
@@ -21,8 +21,15 @@ div(ng-controller="ObjectController")
                         span.caret 
                     hr                       
                 .panel-collapse.collapse.in(id="collapse{{zone.name}}")
-                    .panel-body                    
-                        .col-xs-6.col-sm-2(ng-repeat="object in zone.objects")
-                            my-object(obj="{{object}}", name="{{object.name}}", icon="{{object.representation[0].icon}}", uuid="{{object.uuid}}")
+                    .panel-body
+                        ul.item-group
+                            div(ng-repeat="object in zone.objects", ng-switch="pattern")
+                                .col-xs-6.col-sm-2(ng-switch-when="mosaic")
+                                    my-object(obj="{{object}}", name="{{object.name}}", icon="{{object.representation[0].icon}}", uuid="{{object.uuid}}",pattern="{{pattern}}")
+
+                                .col-xs-12.col-sm-12(ng-switch-when="list") 
+                                    my-object(obj="{{object}}", name="{{object.name}}", icon="{{object.representation[0].icon}}", uuid="{{object.uuid}}",pattern="{{pattern}}")
+                   
+                            
                  
     

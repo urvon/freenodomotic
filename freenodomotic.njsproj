@@ -360,6 +360,7 @@
     <Content Include="views\partials\objects.jade" />
     <Content Include="views\partials\login.jade" />
     <Content Include="views\partials\plugins.jade" />
+    <Content Include="views\partials\test.jade" />
     <Content Include="views\partials\triggers.jade" />
   </ItemGroup>
   <ItemGroup>
