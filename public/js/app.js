@@ -22,7 +22,9 @@ var app = angular.module('myApp',
     $routeProvider.when('/administration/composant/:name', { templateUrl: 'partial/objDetail', controller: ObjDetailController });
     $routeProvider.when('/administration/commandes', { templateUrl: 'partial/commands', controller: CommandController });
     $routeProvider.when('/administration/commandes/detail/:id', {templateUrl: 'partial/cmdDetail', controller: CmdDetailController});
-    //$routeProvider.otherwise({redirectTo: '/'});
+    $routeProvider.when('/administration/triggers/detail/:id', { templateUrl: 'partial/triggerDetail', controller: TriggerDetailController });
+
+      //$routeProvider.otherwise({redirectTo: '/'});
     $locationProvider.html5Mode(true);
     Stomp.WebSocketClass = SockJS;
   }])

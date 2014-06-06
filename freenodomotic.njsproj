@@ -353,6 +353,7 @@
     <Compile Include="public\js\lib\angular\i18n\angular-locale_zu.js" />
     <Content Include="views\partials\admin.jade" />
     <Content Include="views\partials\admin\cmdDetail.jade" />
+    <Content Include="views\partials\triggerDetail.jade" />
     <Content Include="views\partials\objDetail.jade" />
     <Content Include="views\partials\commands.jade" />
     <Content Include="views\partials\dashboard.jade" />
