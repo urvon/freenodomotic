@@ -352,6 +352,158 @@
     "envUUID": "df28cda0-a866-11e2-9e96-0800200c9a66"
   },
   {
+    "@id": "100",
+    "name": "Livingroom blind",
+    "description": "A blind",
+    "actAs": "virtual",
+    "type": "EnvObject.ElectricDevice.Blind",
+    "uuid": "76fd619c-617b-4fb7-9870-8f08164c4620",
+    "hierarchy": "it.freedomotic.objects.impl.Light",
+    "protocol": "unknown",
+    "phisicalAddress": "unknown",
+    "behaviors": [
+      {
+        "@id": "71",
+        "name": "powered",
+        "description": "",
+        "active": true,
+        "priority": -1,
+        "readOnly": false,
+        "value": false
+      },
+      {
+        "@id": "72",
+        "name": "brightness",
+        "description": "",
+        "active": true,
+        "priority": -1,
+        "readOnly": false,
+        "value": 0,
+        "max": 100,
+        "min": 0,
+        "scale": 1,
+        "step": 10
+      }
+    ],
+    "representation": [
+      {
+        "@id": "74",
+        "tangible": true,
+        "intersecable": false,
+        "offset": {
+          "@id": "75",
+          "x": 729,
+          "y": 769
+        },
+        "rotation": 0.0,
+        "icon": "light-off.png",
+        "fillColor": "#000000",
+        "textColor": "#000000",
+        "borderColor": "#000000",
+        "scaleX": 0.0,
+        "scaleY": 0.0,
+        "shape": {
+          "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+          "@id": "76",
+          "points": [
+            {
+              "@id": "78",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "@id": "79",
+              "x": 64,
+              "y": 0
+            },
+            {
+              "@id": "80",
+              "x": 64,
+              "y": 64
+            },
+            {
+              "@id": "81",
+              "x": 0,
+              "y": 64
+            }
+          ]
+        }
+      },
+      {
+        "@id": "82",
+        "tangible": true,
+        "intersecable": false,
+        "offset": {
+          "@id": "83",
+          "x": 729,
+          "y": 769
+        },
+        "rotation": 0.0,
+        "icon": "light-on.png",
+        "fillColor": "#000000",
+        "textColor": "#000000",
+        "borderColor": "#000000",
+        "scaleX": 0.0,
+        "scaleY": 0.0,
+        "shape": {
+          "@class": "it.freedomotic.model.geometry.FreedomPolygon",
+          "@id": "84",
+          "points": [
+            {
+              "@id": "86",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "@id": "87",
+              "x": 64,
+              "y": 0
+            },
+            {
+              "@id": "88",
+              "x": 64,
+              "y": 64
+            },
+            {
+              "@id": "89",
+              "x": 0,
+              "y": 64
+            }
+          ]
+        }
+      }
+    ],
+    "tags": [],
+    "actions": {
+      "@id": "91",
+      "propertyList": [
+        [
+          "turn off",
+          "Execute it successfully"
+        ],
+        [
+          "set brightness",
+          "Execute it successfully"
+        ],
+        [
+          "turn on",
+          "Execute it successfully"
+        ]
+      ]
+    },
+    "triggers": {
+      "@id": "93",
+      "propertyList": [
+        [
+          "",
+          "brightness"
+        ]
+      ]
+    },
+    "currentRepresentation": 0,
+    "envUUID": "df28cda0-a866-11e2-9e96-0800200c9a66"
+  },
+  {
     "@id": "69",
     "name": "Livingroom light",
     "description": "A light",
@@ -521,7 +673,7 @@
         "active": true,
         "priority": -1,
         "readOnly": false,
-        "value": false
+        "value": true
       },
       {
         "@id": "98",
@@ -665,6 +817,7 @@
     "hierarchy": "it.freedomotic.objects.impl.Gate",
     "protocol": "unknown",
     "phisicalAddress": "unknown",
+    "icon": "door-open.png",
     "behaviors": [
       {
         "@id": "123",

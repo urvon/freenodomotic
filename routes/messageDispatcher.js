@@ -19,8 +19,8 @@ exports.init = function (server) {
             console.log('connected to Stomp');
 
             /*freedomotic event received*/
-            stompClient.subscribe('/queue/app.actuators.protocol.arduinousb.in', function (message, tt, rr) {
-
+            stompClient.subscribe('/queue/app.actuators.nlautomationseditor.nlautomationseditor.in', function (message, tt, rr) {
+                //app.actuators.protocol.arduinousb.in
                 /*send message to view*/
                 socketio.emit('event', { news: 'item' });
             });

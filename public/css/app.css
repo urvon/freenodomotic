@@ -82,7 +82,7 @@ hr {
     margin-bottom:0;
 }
 my-object img {
-    min-height: 45px;
+    height: 45px;
 }
 my-object .panel-body {
     background-image: radial-gradient(white,#c9d8ed);

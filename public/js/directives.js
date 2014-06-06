@@ -16,7 +16,7 @@ app.directive('myObject', function ($timeout, $location, freedomotic) {
         priority: -1000,
         restrict: 'E',
         transclude: true,
-        scope: {obj:"@",name:'@', icon:'@', uuid:'@', pattern:'@'},
+        scope: {obj:"@",name:'@', icon:'@', uuid:'@',type:'@', pattern:'@'},
         templateUrl: 'component/myObject',
         link: function (scope, element, attr) {
             //$('.slider').slider();
@@ -27,11 +27,11 @@ app.directive('myObject', function ($timeout, $location, freedomotic) {
             });
             scope.turnOn = function (object) {               
                 freedomotic.send(getToggleData(scope.obj));
-                setActive(JSON.parse(scope.obj),true);                
+                setState(JSON.parse(scope.obj), "powered", true);
             }
             scope.turnOff = function (object) {
                 freedomotic.send(getToggleData(scope.obj));
-                setActive(JSON.parse(scope.obj),false);               
+                setState(JSON.parse(scope.obj), "powered", false);
             }
             scope.edit = function (name) {
                 $location.path('/administration/composant/' + scope.name)
@@ -44,23 +44,37 @@ app.directive('myObject', function ($timeout, $location, freedomotic) {
         var obj = JSON.parse(object);
         for (var i in obj.behaviors) {
             var behavior = obj.behaviors[i]
-            if (behavior != null && behavior.name == "powered") {
-                setActive(obj,behavior.value);
+            if (behavior != null) {
+                setState(obj, behavior.name, behavior.value);
             }
         }
     }
 
-    function setActive(object, isActive) {
-        if (isActive) {
-            $("#btn-on-" + object.uuid).addClass("btn-success");
-            $("#btn-off-" + object.uuid).removeClass("btn-danger");
-            $("#img-" + object.uuid).attr("src", "/img/freedomotic/light-on.png");
+    function setState(object, behaviourType, behaviourValue) {
+        switch (behaviourType) {
+            case "powered":
+                if (behaviourValue) {
+                    $("#btn-on-" + object.uuid).addClass("btn-success");
+                    $("#btn-off-" + object.uuid).removeClass("btn-danger");
+                    $("#img-" + object.uuid).attr("src", "/img/freedomotic/light-on.png");
+                }
+                else {
+                    $("#btn-off-" + object.uuid).addClass("btn-danger").attr("ng-disabled", "true");
+                    $("#btn-on-" + object.uuid).removeClass("btn-success");
+                    $("#img-" + object.uuid).attr("src", "/img/freedomotic/light-off.png");
+                }
+                break;
+            case "open":
+                if (!behaviourValue) {
+                    $("#img-" + object.uuid).attr("src", "/img/freedomotic/door-open.png");
+                }
+                else {
+                    $("#img-" + object.uuid).attr("src", "/img/freedomotic/door-closed.png");
+                }
+                break;
+            default:
         }
-        else {
-            $("#btn-off-" + object.uuid).addClass("btn-danger").attr("ng-disabled", "true");
-            $("#btn-on-" + object.uuid).removeClass("btn-success");
-            $("#img-" + object.uuid).attr("src", "/img/freedomotic/light-off.png");
-        }
+        
     }
 
     function getToggleData(obj) {

@@ -45,6 +45,7 @@ html(lang='fr', ng-app="myApp")
                                 a.glyphicon.glyphicon-flash(href="/administration/commandes")
                             li 
                                 a.glyphicon.glyphicon-time(href="/triggers")
+                            
                                             
                     .collapse.navbar-collapse.navbar-ex2-collapse
                         ul.nav.nav-sidebar
@@ -62,7 +63,10 @@ html(lang='fr', ng-app="myApp")
                                     span.badge.right(ng-bind="nbCmd") 
                             li 
                                 a.glyphicon.glyphicon-time(href="/triggers")  D&eacute;clancheurs
-                                    span.badge.right(ng-bind="nbTrigger")  
+                                    span.badge.right(ng-bind="nbTrigger")
+                            li 
+                                a.glyphicon.glyphicon-list-alt(href="/freedomotic/log")  Log
+
                      .sidebar-footer                
                         img(ng-src='/img/freedomotic_logo.png');              
           

@@ -26,6 +26,10 @@ app.controller('MenuController', ['$scope', '$http', 'freedomotic', function ($s
     });
 }]);
 
+app.controller('LogViewerController', ['$scope', '$http', 'freedomotic', function ($scope, $http, freedomotic) {
+
+}]);
+
 app.controller('dndCtrl', ['$scope', 'someArrays', function ($scope, someArrays) {
     $scope.someArrays = someArrays;
 

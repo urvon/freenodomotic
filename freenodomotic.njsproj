@@ -28,6 +28,8 @@
     <Compile Include="routes\restApi.js" />
     <Content Include="public\data\triggers.xml" />
     <Content Include="public\img\freedomotic\barometer.png" />
+    <Content Include="public\img\freedomotic\door-closed.png" />
+    <Content Include="public\img\freedomotic\door-open.png" />
     <Content Include="public\img\freedomotic\door.PNG" />
     <Content Include="public\img\freedomotic\grocerylist.gif" />
     <Content Include="public\img\freedomotic\hygrometer.PNG" />
@@ -353,6 +355,7 @@
     <Compile Include="public\js\lib\angular\i18n\angular-locale_zu.js" />
     <Content Include="views\partials\admin.jade" />
     <Content Include="views\partials\admin\cmdDetail.jade" />
+    <Content Include="views\partials\logViewer.jade" />
     <Content Include="views\partials\triggerDetail.jade" />
     <Content Include="views\partials\objDetail.jade" />
     <Content Include="views\partials\commands.jade" />

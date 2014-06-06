@@ -7,10 +7,17 @@
             img(id="img-{{uuid}}", ng-src="/img/freedomotic/{{icon}}")
             br
             //input.slider(data-slider-min='0', data-slider-max='100')
-            .btn-group
-                button(id="btn-on-{{uuid}}", class="btn btn-default", ng-click="turnOn(uuid)") On
-                button(id="btn-off-{{uuid}}", class="btn btn-default", ng-click="turnOff(uuid)") Off
-     
+            div(ng-switch="type")
+                .btn-group(ng-switch-when="EnvObject.ElectricDevice.Light")
+                    button(id="btn-on-{{uuid}}", class="btn btn-default", ng-click="turnOn(uuid)") On
+                    button(id="btn-off-{{uuid}}", class="btn btn-default", ng-click="turnOff(uuid)") Off
+                .btn-group(ng-switch-when="EnvObject.ElectricDevice.Blind")
+                    button.btn.btn-default(id="btn-up-{{uuid}}", ng-click="turnOn(uuid)")
+                        span.glyphicon.glyphicon-arrow-up 
+                    button.btn.btn-default(id="btn-middle-{{uuid}}", class="btn btn-default", ng-click="turnOff(uuid)")
+                        span.glyphicon.glyphicon-unchecked
+                    button.btn.btn-default(id="btn-down-{{uuid}}", class="btn btn-default", ng-click="turnOff(uuid)")
+                        span.glyphicon.glyphicon-arrow-down
                  
     div(ng-switch-when="list")
         li.list-group-item 
