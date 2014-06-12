@@ -662,12 +662,12 @@
             "phisicalAddress": "unknown",
             "behaviors": [
               {
-                "name": "powered",
+                "name": "rolling",
                 "description": "",
                 "active": true,
                 "priority": -1,
                 "readOnly": false,
-                "value": false
+                "value": 0
               },
               {
                 "name": "brightness",

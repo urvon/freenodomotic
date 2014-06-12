@@ -25,6 +25,9 @@ app.directive('myObject', function ($timeout, $location, freedomotic) {
                     initValue(scope.obj);
                 }
             });
+            scope.rolling = function(object,state,el){
+                setState(object, "rolling", state);
+            }
             scope.turnOn = function (object) {               
                 freedomotic.send(getToggleData(scope.obj));
                 setState(JSON.parse(scope.obj), "powered", true);
@@ -70,6 +73,26 @@ app.directive('myObject', function ($timeout, $location, freedomotic) {
                 }
                 else {
                     $("#img-" + object.uuid).attr("src", "/img/freedomotic/door-closed.png");
+                }
+                break;
+            case "rolling":
+                switch (behaviourValue) {
+                    case -1:
+                        $("#btn-down-" + object).addClass("btn-success");
+                        $("#btn-up-" + object).removeClass("btn-success");
+                        $("#btn-middle-" + object).removeClass("btn-success");
+                        break;
+
+                    case 1:
+                        $("#btn-up-" + object).addClass("btn-success");
+                        $("#btn-middle-" + object).removeClass("btn-success");
+                        $("#btn-down-" + object).removeClass("btn-success");
+                        break;
+                    default:
+                        $("#btn-middle-" + object).addClass("btn-success");
+                        $("#btn-up-" + object).removeClass("btn-success");
+                        $("#btn-down-" + object).removeClass("btn-success");
+                        break;
                 }
                 break;
             default:
