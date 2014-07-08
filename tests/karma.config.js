@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Tue Jul 01 2014 11:04:40 GMT+0200 (Paris, Madrid (heure d’été))
+// Generated on Tue Jul 01 2014 14:24:55 GMT+0200 (Paris, Madrid (heure d’été))
 
 module.exports = function(config) {
   config.set({
@@ -14,14 +14,41 @@ module.exports = function(config) {
 
 
     // list of files / patterns to load in the browser
-    files: [
-      {pattern: '*.test.js', included: true}
+    files: [      
+	  '../public/js/lib/angular/angular.js',
+	  '../public/js/lib/angular/angular-route.js',	  
+	  '../public/js/lib/angular/angular-resource.js',
+	  '../public/js/lib/angular/angular-cookies.js',
+	  '../public/js/lib/angular/angular-mocks.js',
+	  '../public/js/lib/angular/ng-context-menu.js',
+	  '../public/js/lib/stomp.js',
+	  '../public/js/lib/socket.io.js',
+	  '../public/js/lib/angular/angular-stomp.js',
+	  'http://cdn.sockjs.org/sockjs-0.3.min.js',
+	  '../public/bootstrap/js/ui-bootstrap-tpls-0.11.0.js',
+	  '../public/js/lib/angular/angular-draganddrop.js',
+	  '../public/js/lib/jquery/jquery-2.0.3.min.js',
+	  '../public/bootstrap/js/bootstrap.min.js',
+	  '../public/js/app.js',
+	  '../public/js/services.js',
+	  '../public/js/controllers.js',
+	  '../public/js/filters.js',
+	  '../public/js/directives.js',
+	  '../public/js/dashboard.js',
+	  '../public/js/triggers.js',
+	  '../public/js/commands.js',
+	  'commands.test.js'
     ],
 
 
     // list of files to exclude
     exclude: [
-      
+		/*'../public/js/lib/angular/angular-animate.js',
+		'../public/js/lib/angular/angular-animate.min.js',
+		'../public/js/lib/angular/angular-cookies.js',
+		//'../public/js/lib/angular/angular-cookies.min.js',
+		'../public/js/lib/angular/angular-sanitize.min.js',
+		'../public/js/lib/angular/angular-sanitize.js'*/
     ],
 
 
@@ -62,6 +89,6 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true
+    singleRun: false
   });
 };

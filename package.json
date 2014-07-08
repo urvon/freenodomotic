@@ -1,11 +1,17 @@
 {
-	"name": "application-name",
-	"version": "0.0.1",
-	"private": true,
-	"dependencies": {
-		"express": "~3.2.6",
-		"jade": "~0.31.2",
-		"stompjs": "~2.3.1",
-		"xml2js": ">=0.1.0"
-	}
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "~3.2.6",
+    "jade": "~0.31.2",
+    "stompjs": "~2.3.1",
+    "xml2js": ">=0.1.0"
+  },
+  "devDependencies": {
+    "karma-chrome-launcher": "^0.1.4",
+    "karma-jasmine": "^0.1.5",
+    "karma-requirejs": "^0.2.2",
+    "requirejs": "^2.1.14"
+  }
 }

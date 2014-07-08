@@ -11,7 +11,7 @@ var app = angular.module('myApp',
         'ngCookies',
         'ng-context-menu',
         'ui.bootstrap',
-        'draganddrop'])
+        /*'draganddrop'*/])
   .config(['$routeProvider', '$locationProvider', '$httpProvider', function($routeProvider, $locationProvider, $httpProvider) {   
     $routeProvider.when('/', { templateUrl: 'partial/dashBoard', controller: DashBoardController });
     $routeProvider.when('/test', { templateUrl: 'partial/test', controller: dndCtrl });
